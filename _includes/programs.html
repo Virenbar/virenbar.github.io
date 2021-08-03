@@ -1,0 +1,7 @@
+<ul>
+    {% for program in site.programs %}
+      <li>
+        <h2><a href="{{ program.url }}">{{ program.name }}</a></h2>
+      </li>
+    {% endfor %}
+</ul>

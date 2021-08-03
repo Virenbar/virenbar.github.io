@@ -4,6 +4,8 @@ plugins:
 collections:
   authors:
     output: true
+  programs:
+    output: true
 
 defaults:
   - scope:
@@ -11,6 +13,11 @@ defaults:
       type: "authors"
     values:
       layout: "author"
+  - scope:
+      path: ""
+      type: "programs"
+    values:
+      layout: "program"
   - scope:
       path: ""
       type: "posts"
