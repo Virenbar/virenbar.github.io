@@ -1,0 +1,14 @@
+---
+layout: collection
+title: "My programs"
+permalink: /myprograms/
+---
+<h1>Latest Posts</h1>
+
+<ul>
+    {% for program in site.programs %}
+    <li>
+        <h2><a href="{{ program.url }}">{{ program.name }}</a></h2>
+    </li>
+    {% endfor %}
+</ul>
