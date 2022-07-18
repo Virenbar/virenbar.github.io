@@ -1,0 +1,41 @@
+@import "mbr";
+
+$v-green: #009000;
+$v-green-a: #00a000;
+
+main {
+    position: relative;
+}
+
+.current {
+    color: green;
+}
+
+.nav-item.current>.nav-link,
+.navbar-dark .navbar-brand {
+    color: $v-green;
+}
+
+.nav-item.current>.nav-link:hover,
+.nav-item.current>.nav-link:focus,
+.navbar-dark .navbar-brand:hover,
+.navbar-dark .navbar-brand:focus {
+    color: $v-green-a;
+}
+
+a {
+    color: $v-green;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover,
+a:focus {
+    animation: textShadow 1.033s infinite;
+    color: $v-green-a;
+}
+
+.navbar-dark .navbar-brand:hover,
+.navbar-dark .navbar-brand:focus {
+    color: $v-green-a
+}
