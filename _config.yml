@@ -1,6 +1,7 @@
 title: "@Virenbar"
-baseurl: "/"
 url: "https://virenbar.net"
+baseurl: "/"
+description: "Virenbar's personal site / @Virenbar"
 
 plugins:
   - jekyll-sitemap
