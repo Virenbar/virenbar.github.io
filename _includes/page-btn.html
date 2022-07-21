@@ -1,0 +1,9 @@
+{% if include.url %}
+    <a class="btn bg-info" href="{{ include.url }}">{{ include.title }}</a>
+{% else %}
+    <a
+        aria-disabled="true"
+        class="btn bg-info disabled"
+        href="javascript:void 0"
+        tabindex="-1">{{ include.title }}</a>
+{% endif %}

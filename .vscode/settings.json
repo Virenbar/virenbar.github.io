@@ -1,0 +1,6 @@
+{
+    "scss.validate": false,
+    "[html]": {
+        "editor.defaultFormatter": "sissel.shopify-liquid"
+    }
+}

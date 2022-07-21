@@ -1,4 +1,0 @@
----
-name: PochtaAPI
-repo: temp
----

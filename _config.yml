@@ -1,40 +1,29 @@
+title: "@Virenbar"
+baseurl: "/"
+url: "https://virenbar.net"
+
 plugins:
   - jekyll-sitemap
 
-theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "neon"
-
 collections:
-  authors:
-    output: true
-  programs:
+  projects:
     output: true
 
 defaults:
-  # _pages
   - scope:
-      path: "_pages"
-      type: pages
+      path: "pages"
+      type: "pages"
     values:
-      layout: single
+      layout: "page"
   - scope:
       path: ""
-      type: "authors"
+      type: "projects"
     values:
-      layout: "author"
-  - scope:
-      path: "_programs"
-      type: "programs"
-    values:
-      layout: "program"
+      layout: "project"
   - scope:
       path: ""
       type: "posts"
     values:
-      layout: "single"
-  - scope:
-      path: ""
-    values:
-      layout: "single"
+      layout: "post"
 
-permalink: /:categories/:title/
+permalink: /:categories/:year/:month/:day/:title

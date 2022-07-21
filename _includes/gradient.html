@@ -1,0 +1,9 @@
+{% comment %} Takes in {{ text }}, the text to gradients. Outputs spans accordingly. {% endcomment %}
+
+<span class="sr-only">{{ include.text }}</span>
+<span aria-hidden="true" class="gradient gradient-green">
+    {% assign chars = include.text | split: '' %}
+    {% for char in chars -%}
+        <span>{{char}}</span>
+    {%- endfor %}
+</span>

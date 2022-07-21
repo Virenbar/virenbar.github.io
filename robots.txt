@@ -1,0 +1,5 @@
+User-agent: * 
+Allow: /
+Sitemap: http://virenbar.ru/sitemap.xml
+Sitemap: http://virenbar.ru/FIAS_GAR/sitemap.xml 
+Sitemap: http://virenbar.ru/PochtaAPI/sitemap.xml

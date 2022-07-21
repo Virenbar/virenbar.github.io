@@ -1,14 +1,21 @@
 ---
-layout: default
+layout: page
 ---
-<h1>{{ page.title }}</h1>
-
-<p>
-  {{ page.date | date_to_string }}
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-    - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-</p>
-
-{{ content }}
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h4>{{ page.title }}</h4>
+        <span class="text-muted">
+            {{page.date | date: "%Y.%m.%d"}}</span>
+    </div>
+    <div class="card-body">
+        {{ content }}
+    </div>
+    <div class="card-footer">
+        <nav aria-label="Post navigation">
+            <div class="d-flex justify-content-between">
+                {% include page-btn.html title="Previous" url=page.previous.url %}
+                {% include page-btn.html title="Next" url=page.next.url %}
+            </div>
+        </nav>
+    </div>
+</div>

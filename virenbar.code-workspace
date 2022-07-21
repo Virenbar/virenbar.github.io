@@ -9,5 +9,10 @@
 			"path": "./assets"
 		}
 	],
-	"settings": {}
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"sissel.shopify-liquid"
+		]
+	}
 }
