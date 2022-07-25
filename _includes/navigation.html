@@ -10,7 +10,7 @@
 
         <div class="collapse navbar-collapse" id="global-navbar">
             <ul class="navbar-nav mr-auto">
-                {% for navpage in site.data.navigation -%}
+                {%- for navpage in site.data.navigation -%}
                     {%- assign class_names = "nav-item" -%}
                     {%- assign sr_current = "" -%}
                     {%- if navpage.url == page.url -%}
@@ -20,7 +20,7 @@
                     <li class="{{ class_names }}">
                         <a class="nav-link" href="{{navpage.url}}">
                             {{navpage.title}}{{ sr_current }}
-                            {%- if navpage.external -%}
+                            {%- if navpage.url contains "http" %}
                                 <span class="fas fa-external-link"></span>
                             {%- endif -%}
                         </a>
