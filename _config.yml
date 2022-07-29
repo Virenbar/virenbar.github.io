@@ -1,7 +1,7 @@
 title: "@Virenbar"
 url: "https://virenbar.net"
-baseurl: "/"
-description: "Virenbar's personal site / @Virenbar"
+baseurl: ""
+description: "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg."
 
 plugins:
   - jekyll-sitemap
@@ -21,6 +21,7 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+      permalink: /:categories/:title
   - scope:
       path: ""
       type: "posts"

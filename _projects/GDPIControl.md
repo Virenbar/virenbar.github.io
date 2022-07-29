@@ -14,8 +14,8 @@ Small tray application for controlling GoodbyeDPI
 ## Screenshots
 
 Tray window  
-![tray](/assets/images/gdpicontrol/tray.png){: .img-thumbnail}
+![tray](/assets/images/gdpicontrol/tray.png){: .img-fluid}
 
 Main window  
-![modesets](/assets/images/gdpicontrol/modesets.png){: .img-thumbnail}
-![custom](/assets/images/gdpicontrol/custom.png){: .img-thumbnail}
+![modesets](/assets/images/gdpicontrol/modesets.png){: .img-fluid}
+![custom](/assets/images/gdpicontrol/custom.png){: .img-fluid}
