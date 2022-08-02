@@ -21,7 +21,6 @@ defaults:
       type: "projects"
     values:
       layout: "project"
-      permalink: /:categories/:title
   - scope:
       path: ""
       type: "posts"
