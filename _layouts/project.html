@@ -4,16 +4,24 @@ layout: page
 <div class="card">
     <div class="card-header d-flex justify-content-between">
         <h4>{{ page.title }}</h4>
-        <a href="{{ page.repo }}">
-            <h4>
-                <i class="fa-brands fa-github"></i>
-            </h4>
-        </a>
+        {%- if page.github -%}
+            <a href="https://github.com/{{ page.github }}">
+                <h4>
+                    <i class="fa-brands fa-github"></i>
+                </h4>
+            </a>
+        {%- endif -%}
     </div>
     <div class="card-body">
         {{ content }}
     </div>
-    <div class="card-footer">
-        <nav aria-label="Post navigation"></nav>
-    </div>
+    {%- if page.github -%}
+        <div class="card-footer d-flex justify-content-between">
+            <div>
+                <a href="https://github.com/{{ page.github }}">
+                    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/{{ page.github }}?color=009000&logo=github">
+                </a>
+            </div>
+        </div>
+    {%- endif -%}
 </div>

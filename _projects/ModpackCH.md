@@ -1,6 +1,7 @@
 ---
 title: ModpacksCH
 repo: https://github.com/Virenbar/ModpacksCH
+github: Virenbar/ModpacksCH
 ---
 Console application for downloading modpacks from modpacks.ch
 

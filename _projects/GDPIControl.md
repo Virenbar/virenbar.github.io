@@ -1,6 +1,7 @@
 ---
 title: GDPIControl
 repo: https://github.com/Virenbar/GDPIControl
+github: Virenbar/GDPIControl
 ---
 Small tray application for controlling GoodbyeDPI
 

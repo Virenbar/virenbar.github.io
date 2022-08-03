@@ -40,3 +40,7 @@ a:focus {
 .navbar-dark .navbar-brand:focus {
     color: $v-green-a
 }
+
+:is(.card-footer, .card-header) :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 0;
+}
