@@ -36,6 +36,11 @@ a:focus {
     color: $v-green-a;
 }
 
+table ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
 .navbar-dark .navbar-brand:hover,
 .navbar-dark .navbar-brand:focus {
     color: $v-green-a
