@@ -5,14 +5,14 @@ github: Virenbar/GDPIControl
 ---
 Small tray application for controlling GoodbyeDPI
 
-## Features
+#### Features
 
 - Switching GoodbyeDPI on/off from tray
 - Selecting custom options
 - Updating blacklist
 - Autostart at logon
 
-## Screenshots
+#### Screenshots
 
 Tray window  
 ![tray](/assets/images/gdpicontrol/tray.png){: .img-fluid}
