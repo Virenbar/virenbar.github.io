@@ -5,7 +5,8 @@ layout: page
     <div class="card-header d-flex justify-content-between">
         <h4>{{ page.title }}</h4>
         <span class="text-muted">
-            {{page.date | date: "%Y.%m.%d"}}</span>
+            {{page.date | date: "%Y.%m.%d"}}
+        </span>
     </div>
     <div class="card-body">
         {{ content }}
@@ -13,8 +14,8 @@ layout: page
     <div class="card-footer">
         <nav aria-label="Post navigation">
             <div class="d-flex justify-content-between">
-                {% include page-btn.html title="Previous" url=page.previous.url %}
-                {% include page-btn.html title="Next" url=page.next.url %}
+                {%- include page-btn.html title="Previous" url=page.previous.id -%}
+                {%- include page-btn.html title="Next" url=page.next.id -%}
             </div>
         </nav>
     </div>

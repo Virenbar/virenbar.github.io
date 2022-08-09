@@ -1,0 +1,4 @@
+{%- assign lang = include.lang | default: page.lang -%}
+{%- assign id = include.id | downcase -%}
+{%- assign text = site.data.translation[id][lang] | default: include.id -%}
+{{text}}

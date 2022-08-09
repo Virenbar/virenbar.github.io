@@ -1,6 +1,9 @@
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
+<html lang="{{ page.lang | slice: 0,2 | default: "en" }}">
     <head>
+        <meta test="{%- include t.html id='test' -%}">
+        <meta lang="{{page.lang}}">
+        <meta base="{{page.baseurl}}">
         {% include head.html %}
     </head>
     <body class="min-vh-100 d-flex flex-column wait-for-icons">

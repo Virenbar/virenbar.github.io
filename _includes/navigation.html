@@ -1,3 +1,5 @@
+{%- assign tpages = site.pages | where:'id',page.id | sort: 'lang' -%}
+
 <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
     <nav class="container">
         <a class="navbar-brand mx-auto" href="/">
@@ -9,7 +11,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="global-navbar">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav me-auto">
                 {%- for navpage in site.data.navigation -%}
                     {%- assign class_names = "nav-item" -%}
                     {%- assign sr_current = "" -%}
@@ -27,6 +29,23 @@
                     </li>
                 {%- endfor -%}
             </ul>
+            <div class="dropdown">
+                <button aria-expanded="false" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+                    <i class="fa-solid fa-globe"></i>
+                    {% include t.html id="lang" %}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    {%- for tpage in tpages -%}
+                        {%- assign class = "dropdown-item {{tpage.lang}}" -%}
+                        {% if tpage.lang == page.lang %}
+                            {%- assign class = class | append: " active" -%}
+                        {% endif %}
+                        <li>
+                            <a class="{{class}}" href="{{tpage.url}}">{% include t.html id="lang" lang=tpage.lang %}</a>
+                        </li>
+                    {%- endfor -%}
+                </ul>
+            </div>
         </div>
     </nav>
 </header>

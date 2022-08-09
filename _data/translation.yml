@@ -1,0 +1,39 @@
+test:
+  en: Test
+  ru: Тест
+  es: Testo
+lang:
+  en: English
+  ru: Русский
+  es: Esperanto
+# Hardware
+status:
+  en: Status
+  ru: Статус
+pc:
+  en: My PC
+  ru: Мой ПК
+server:
+  en: My Server
+  ru: Мой сервер
+motherboard:
+  en: Motherboard
+  ru: Материнская плата
+cpu:
+  en: Processor
+  ru: Процессор
+memory:
+  en: Memory
+  ru: Оперативная память
+gpu:
+  en: Graphics card
+  ru: Видеокарта
+storage:
+  en: Storage
+  ru: Хранилище
+os:
+  en: OS
+  ru: ОС
+monitor:
+  en: Monitor
+  ru: Монитор
