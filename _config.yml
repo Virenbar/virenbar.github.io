@@ -20,13 +20,13 @@ defaults:
       path: "en"
     values:
       lang: en
-      baseurl: "en/"
+      langurl: "/en"
 
   - scope:
       path: "es"
     values:
       lang: es
-      baseurl: "es/"
+      langurl: "/es"
 
   - scope:
       path: ""

@@ -1,6 +1,8 @@
 ---
 layout: page
 ---
+{%- assign next = site.posts | where_exp: "item", "item.lang == page.lang and item.date > page.date" | last -%}
+{%- assign previous = site.posts | where_exp: "item", "item.lang == page.lang and item.date < page.date" | first -%}
 <div class="card">
     <div class="card-header d-flex justify-content-between">
         <h4>{{ page.title }}</h4>
@@ -14,8 +16,8 @@ layout: page
     <div class="card-footer">
         <nav aria-label="Post navigation">
             <div class="d-flex justify-content-between">
-                {%- include page-btn.html title="Previous" url=page.previous.id -%}
-                {%- include page-btn.html title="Next" url=page.next.id -%}
+                {%- include page-btn.html title="Previous" url=previous.url -%}
+                {%- include page-btn.html title="Next" url=next.url -%}
             </div>
         </nav>
     </div>
