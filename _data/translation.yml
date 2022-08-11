@@ -1,0 +1,53 @@
+test:
+  en: Test
+  ru: Тест
+  es: Testo
+lang:
+  en: English
+  ru: Русский
+  es: Esperanto
+description:
+  en: "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg."
+  ru: "Персональный сайт Virenbar'а .NET и TS разработчика, живущего и работающего на Урале в Екатеринбурге"
+# Navbar
+home:
+  ru: Главная
+about:
+  ru: null
+projects:
+  ru: Проекты
+blog:
+  ru: Блог
+hardware:
+  ru: Железо
+# Hardware
+status:
+  en: Status
+  ru: Статус
+pc:
+  en: My PC
+  ru: Мой ПК
+server:
+  en: My Server
+  ru: Мой сервер
+motherboard:
+  en: Motherboard
+  ru: Материнская плата
+cpu:
+  en: Processor
+  ru: Процессор
+memory:
+  en: Memory
+  ru: Оперативная память
+gpu:
+  en: Graphics card
+  ru: Видеокарта
+storage:
+  en: Storage
+  ru: Хранилище
+os:
+  en: OS
+  ru: ОС
+monitor:
+  en: Monitor
+  ru: Монитор

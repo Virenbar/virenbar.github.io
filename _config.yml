@@ -12,15 +12,34 @@ collections:
 
 defaults:
   - scope:
-      path: "pages"
+      path: ""
+    values:
+      lang: ru
+
+  - scope:
+      path: "en"
+    values:
+      lang: en
+      langurl: "/en"
+
+  - scope:
+      path: "es"
+    values:
+      lang: es
+      langurl: "/es"
+
+  - scope:
+      path: ""
       type: "pages"
     values:
       layout: "page"
+
   - scope:
       path: ""
       type: "projects"
     values:
       layout: "project"
+
   - scope:
       path: ""
       type: "posts"

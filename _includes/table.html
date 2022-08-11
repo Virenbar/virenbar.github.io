@@ -1,0 +1,24 @@
+<!-- {%- assign table = site.data.server[include.data] -%} -->
+<table class="table table-hover border-primary">
+    <tbody>
+        {%- for item in include.data %}
+            <tr>
+                {%- assign key = item[0] -%}
+                {%- assign value = item[1] -%}
+                <th>{%- include t.html id = key -%}</th>
+                {%- if value.size == 1 -%}
+                    <td>{{value[0]}}</td>
+                {%- else -%}
+                    <td>
+                        <ul>
+                            {%- for item in value -%}
+                                <li>{{item}}</li>
+                            {%- endfor -%}
+                        </ul>
+                    </td>
+                {%- endif -%}
+            </tr>
+        {%- endfor -%}
+
+    </tbody>
+</table>

@@ -1,0 +1,10 @@
+{%- comment -%}
+    {%- assign tpages = site.posts | where:'slug', page.slug | sort: 'lang' -%} 
+    {{ tpages | inspect }}
+    {{ page.slug | inspect }}
+    {%- endcomment -%}
+{%- capture debug -%}
+    id: {{page.id}}, lang: {{page.lang}}, slug: {{page.slug}}, name: {{page.name}}, layout: {{page.layout}}
+{%- endcapture -%}
+{% assign debug = debug | strip_newlines | split: ',' %}
+{% assign debug.test = "1234" %}

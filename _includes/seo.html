@@ -17,7 +17,7 @@
 
 {%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
 {%- if seo_description -%}
-    {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
+    {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br/>', ' ' | escape_once | strip -%}
 {%- endif -%}
 
 {%- if page.date -%}
@@ -33,10 +33,7 @@
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}">
-
-{%- if seo_description -%}
-    <meta property="og:description" content="{{ seo_description }}">
-{%- endif -%}
+<meta property="og:description" content="{{ seo_description }}">
 
 {%- if page.date -%}
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">

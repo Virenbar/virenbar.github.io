@@ -1,12 +1,12 @@
 - title: Home
   url: /
-- title: About
-  url: /about/
+#- title: About
+#  url: /about
 - title: Projects
-  url: /projects/
+  url: /projects
 - title: Blog
-  url: /blog/
+  url: /blog
 - title: Hardware
-  url: /hardware/
+  url: /hardware
 #- title: Status
 #  url: https://stats.uptimerobot.com/X0WxrI4WxW
