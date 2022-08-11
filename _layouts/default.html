@@ -1,8 +1,8 @@
-{% include debug.html %}
+{% assign t = site.data.translation %}
 <!doctype html>
 <html lang="{{ page.lang | slice: 0,2 | default: "en" }}">
     <head>
-        <meta test="{%- include t.html id='test' -%}"> {%- include head.html -%}
+        {%- include head.html -%}
     </head>
     <body class="min-vh-100 d-flex flex-column wait-for-icons">
         <a class="sr-only sr-only-focusable" href="#main">Skip to main</a>

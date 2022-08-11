@@ -19,10 +19,11 @@
   "html": {
     "correct": false,
     "force_attribute": false,
-    "braces": false,
+    "braces": true,
     "preserve": 1,
     "unformatted": false,
-    "wrap": 100
+    "wrap": 100,
+    "ignore_comments": true
   },
   "js": {
     "preserve": 1,

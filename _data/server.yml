@@ -3,7 +3,7 @@ Motherboard:
 CPU:
     - Intel Core i5-3570 OEM
 Memory:
-    - Corsair DDR3 16GB (4GBx4) 1866MHz (CMZ8GX3M2A1866C9)
+    - Corsair DDR3 16GB (4x4GB) 1866MHz (CMZ8GX3M2A1866C9)
 GPU:
     - MSI GTX 1060 6GB (Used for mining)
 Storage:

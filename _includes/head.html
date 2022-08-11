@@ -1,15 +1,26 @@
-<!-- Required meta tags -->
+{%- comment -%} Required meta tags {%- endcomment -%}
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta test="{{t['test'][page.lang]}} {% include t.html id='test' %}"> 
 {% include favicon.html %}
-{% include seo.html %}
-<!-- Bootstrap CSS -->
+{% include seo.html %} 
+{%- comment -%} Bootstrap CSS {%- endcomment -%}
 <link crossorigin="anonymous" href="/assets/css/bootstrap.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
-<!-- Popper.js, Bootstrap JS -->
-<script crossorigin="anonymous" defer integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script crossorigin="anonymous" defer integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-<!-- FontAwesome -->
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    rel="stylesheet"> 
+{%- comment -%} Popper.js, Bootstrap JS {%- endcomment -%}
+<script
+    crossorigin="anonymous"
+    defer
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script
+    crossorigin="anonymous"
+    defer
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+{%- comment -%} FontAwesome {%- endcomment -%}
 <script crossorigin="anonymous" src="https://kit.fontawesome.com/3d652cc361.js"></script>
-<!-- My Styles -->
+{%- comment -%} My Styles {%- endcomment -%}
 <link crossorigin="anonymous" href="/assets/css/styles.css" rel="stylesheet">
