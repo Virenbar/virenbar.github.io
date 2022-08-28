@@ -47,3 +47,6 @@ defaults:
       layout: "post"
 
 permalink: /:categories/:year/:month/:day/:title
+
+exclude:
+  - ".autoindex"

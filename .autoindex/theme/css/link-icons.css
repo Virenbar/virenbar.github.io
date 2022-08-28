@@ -1,0 +1,209 @@
+/*
+FILE FORMAT ICONS
+by Greg Schoppe (http://gschoppe.com)
+USAGE: include FontAwesome on page, as shown on http://fontawesome.io
+       then include this css file, and target links by adding the link-icon
+       class.  Note: try to avoid or manually label links to websites, as that
+       detection code is necessarily janky. when in doubt, just end all external
+       links with a trailing slash (/), a query string (?), or a link target (#)
+*/
+a.link-icon::before,
+a.link-file[href]::before {
+    content: "\f016";
+    /* generic file icon */
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    width: 20px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+:is(a[href$=".txt"],
+    a[href$=".md"]).link-icon::before,
+a.link-text[href]::before {
+    content: "\f0f6";
+    /*Text*/
+}
+
+a[href$=".pdf"].link-icon::before,
+a.link-pdf[href]::before {
+    content: "\f1c1";
+    /*PDF*/
+}
+
+:is(a[href$=".doc"],
+    a[href$=".docx"]).link-icon::before,
+a.link-word[href]::before {
+    content: "\f1c2";
+    /*Word*/
+}
+
+:is(a[href$=".xls"],
+    a[href$=".xlsx"]).link-icon::before,
+a.link-excel[href]::before {
+    content: "\f1c3";
+    /*Excel*/
+}
+
+:is(a[href$=".ppt"],
+    a[href$=".pptx"]).link-icon::before,
+a.link-powerpoint[href]::before {
+    content: "\f1c4";
+    /*Powerpoint*/
+}
+
+:is(a[href$=".gif"],
+    a[href$=".jpg"],
+    a[href$=".jpeg"],
+    a[href$=".png"],
+    a[href$=".bmp"],
+    a[href$=".tif"]).link-icon::before,
+a.link-image[href]:before {
+    content: "\f1c5";
+    /*Image*/
+}
+
+:is(a[href$=".zip"],
+    a[href$=".zipx"],
+    a[href$=".rar"],
+    a[href$=".tar"],
+    a[href$=".gz"],
+    a[href$=".dmg"],
+    a[href$=".iso"]).link-icon::before,
+a.link-archive[href]::before {
+    content: "\f1c6";
+    /*Archive*/
+}
+
+:is(a[href$=".wav"],
+    a[href$=".mp3"],
+    a[href$=".fla"],
+    a[href$=".flac"],
+    a[href$=".ra"],
+    a[href$=".rma"],
+    a[href$=".aif"],
+    a[href$=".aiff"],
+    a[href$=".aa"],
+    a[href$=".aac"],
+    a[href$=".aax"],
+    a[href$=".ac3"],
+    a[href$=".au"],
+    a[href$=".ogg"],
+    a[href$=".avr"],
+    a[href$=".3ga"],
+    a[href$=".flac"],
+    a[href$=".mid"],
+    a[href$=".midi"],
+    a[href$=".m4a"],
+    a[href$=".mp4a"],
+    a[href$=".amz"],
+    a[href$=".mka"],
+    a[href$=".asx"],
+    a[href$=".pcm"],
+    a[href$=".m3u"],
+    a[href$=".wma"],
+    a[href$=".xwma"]).link-icon::before,
+a.link-audio[href]::after {
+    content: "\f1c7";
+    /*Audio*/
+}
+
+:is(a[href$=".avi"],
+    a[href$=".mpg"],
+    a[href$=".mp4"],
+    a[href$=".mkv"],
+    a[href$=".mov"],
+    a[href$=".wmv"],
+    a[href$=".vp6"],
+    a[href$=".264"],
+    a[href$=".vid"],
+    a[href$=".rv"],
+    a[href$=".webm"],
+    a[href$=".swf"],
+    a[href$=".h264"],
+    a[href$=".flv"],
+    a[href$=".mk3d"],
+    a[href$=".gifv"],
+    a[href$=".oggv"],
+    a[href$=".3gp"],
+    a[href$=".m4v"],
+    a[href$=".movie"],
+    a[href$=".divx"]).link-icon::before,
+a.link-video[href]::before {
+    content: "\f1c8";
+    /*Video*/
+}
+
+:is(a[href$=".css"],
+    a[href$=".js"],
+    a[href$=".py"],
+    a[href$=".git"],
+    a[href$=".py"],
+    a[href$=".cpp"],
+    a[href$=".h"],
+    a[href$=".ini"],
+    a[href$=".vb"],
+    a[href$=".config"],
+    a[href$=".cs"]).link-icon::before,
+a.link-code[href]::before {
+    content: "\f1c9";
+    /*code*/
+}
+
+:is(a[href$=".exe"],
+    a[href$=".jar"],
+    a[href$=".dll"],
+    a[href$=".bat"],
+    a[href$=".pl"],
+    a[href$=".scr"],
+    a[href$=".msi"],
+    a[href$=".app"],
+    a[href$=".deb"],
+    a[href$=".apk"],
+    a[href$=".jar"],
+    a[href$=".vbs"],
+    a[href$=".prg"],
+    a[href$=".sh"]).link-icon::before,
+a.link-exe[href]::before {
+    content: "\f085";
+    /*Executable*/
+}
+
+:is(a[href$=".com"],
+    a[href$=".net"],
+    a[href$=".org"],
+    a[href$=".edu"],
+    a[href$=".gov"],
+    a[href$=".mil"],
+    a[href$=".html"],
+    a[href$=".htm"],
+    a[href$=".xhtml"],
+    a[href$=".jhtml"],
+    a[href$=".php"],
+    a[href$=".php3"],
+    a[href$=".php4"],
+    a[href$=".php5"],
+    a[href$=".phtml"],
+    a[href$=".asp"],
+    a[href$=".aspx"],
+    a[href$=".cfm"],
+    a[href*="?"],
+    a[href*="#"]).link-icon::before,
+a.link-icon:not([href*='.'])::before,
+a.link[href]::before {
+    content: "\f0c1";
+    /*link*/
+}
+
+:is(a[href$="../"],
+    a[href$="/"]).link-icon::before,
+a.link-folder[href]::before {
+    content: "\f07b";
+    /*Folder*/
+}
+
+a[href$=".html"].link-icon::before,
+a.link-html5[href]::before {
+    content: "\f13b";
+    /*HTML5*/
+}

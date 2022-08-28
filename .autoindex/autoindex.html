@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="https://virenbar.ru/assets/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="https://virenbar.ru/assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="https://virenbar.ru/assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://virenbar.ru/assets/favicon/site.webmanifest" rel="manifest">
+    <link color="#5bbad5" href="https://virenbar.ru/assets/favicon/safari-pinned-tab.svg" rel="mask-icon">
+    <link href="https://virenbar.ru/assets/favicon/favicon.ico" rel="shortcut icon">
+    <meta content="#da532c" name="msapplication-TileColor">
+    <meta content="https://virenbar.ru/assets/favicon/browserconfig.xml" name="msapplication-config">
+    <meta content="#ffffff" name="theme-color">
+    <title>@Virenbar</title>
+    <meta name="description" content="Directory Listing">
+    <!-- Styles -->
+    <link crossorigin="anonymous" href="https://virenbar.ru/assets/css/bootstrap.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://virenbar.ru/assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/autoindex/css/link-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/autoindex/script.js"></script>
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
+        <nav class="container">
+            <a class="navbar-brand mx-auto" href="/">
+                <img alt="" class="d-inline-block align-top rounded-circle" height="32" src="https://gravatar.com/avatar/e405f42d63f70e88dec627087aec4318" width="32" />
+                <span aria-hidden="true" class="gradient gradient-green">
+                    <span>@</span><span>V</span><span>i</span><span>r</span><span>e</span><span>n</span><span>b</span><span>a</span><span>r</span>
+                </span>
+            </a>
+        </nav>
+    </header>
+    <main class="flex-grow-1 flex-shrink-0" id="main">
+        <div class="scanlines"></div>
+        <div class="scanline"></div>
+        <div class="container p-3">
+            <div>
+                <span>Directory Listing</span>
+                <span class="float-end mx-1" id='file-stats'></span>
+                <span class="float-end mx-1" id='dir-stats'></span>
+            </div>
+            <div id='listing'>
+                <span id="path">/</span>
+                <table class="table-sm table-hover border-primary" id="table">
+                    <colgroup>
+                        <col class="col-7">
+                        <col class="col-4">
+                        <col class="col-1">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td><a class="folderup" href="../" style="color:#909090 ;"><b>&#8682; Up</b></a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <script>
+                    const autoindex = `
+// Before Part               
+<head><title>Index of /</title></head>
+<h1>Index of /</h1><hr><pre><a href="../">../</a>
+<a href="dynmap-render/">dynmap-render/</a>                                     16-Feb-2022 10:11                   -
+<a href="Rey.png">Rey.png</a>                                            06-Mar-2022 20:26              227907
+</pre><hr>
+// After Part          
+                    `
+                    const list =
+                        // Before Part
+                        [
+                            {
+                                "name": "dynmap-render",
+                                "type": "directory",
+                                "mtime": "Wed, 16 Feb 2022 10:11:06 GMT"
+                            },
+                            {
+                                "name": "Rey.png",
+                                "type": "file",
+                                "mtime": "Sun, 06 Mar 2022 20:26:54 GMT",
+                                "size": 227907
+                            }
+                        ]
+                    // After Part
+                </script>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-1 px-3 bg-secondary d-flex justify-content-between align-items-center">
+        <div class="d-none d-md-block">
+            Hosted on <a href="https://nginx.org/">nginx</a>
+        </div>
+        <div class="d-none d-md-block">
+            Made using <a href="https://code.visualstudio.com/">VS Code</a>
+        </div>
+    </footer>
+</body>
+<!-- Script -->
+<script>
+    const list1 = [];
+    const matches = autoindex.matchAll(/<a href="(.+)">.+<\/a>\s+([\w-]+\s[\d:]+)\s+(\d*)/gm);
+    for (const match of matches) {
+        console.log(`${match[1]} ${match[2]} ${match[3]}`);
+        list1.push({
+            "name": match[1],
+            "type": match[1].endsWith("/"),
+            "mtime": match[2],
+            "size": match[3]
+        })
+    }
+    console.log(list1)
+    const segments = window.location.pathname.split("/")
+    const last = segments.pop() || segments.pop();
+    $("#path").text(segments.length == 0 ? "/" : last)
+
+    let fileCount = 0, dirCount = 0;
+    const tbody = $('#table').children('tbody');
+    list1.forEach(e => {
+        if (e.type == "file") {
+            tbody.append(`<tr><td><a class="link-icon" href="${e.name}">${e.name}</a></td><td>${e.mtime}</td><td>${FileSize(e.size)}</td></tr>`);
+            fileCount++;
+        } else {
+            tbody.append(`<tr><td><a class="link-icon" href="${e.name}/">${e.name}</a></td><td>${e.mtime}</td><td> - </td></tr>`);
+            dirCount++;
+        }
+    });
+
+    $("#dir-stats").text(`${dirCount} ${dirCount == 1 ? "directory" : "directories"}`);
+    $("#file-stats").text(`${fileCount} ${fileCount == 1 ? "file" : "files"}`);
+</script>
+
+</html>
