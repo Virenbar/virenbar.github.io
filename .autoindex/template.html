@@ -18,10 +18,10 @@
     <!-- Styles -->
     <link crossorigin="anonymous" href="https://virenbar.ru/assets/css/bootstrap.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://virenbar.ru/assets/css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="/autoindex/css/link-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/autoindex/script.js"></script>
+    <link rel="stylesheet" href="/theme/css/link-icons.css">
+    <script src="/theme/scripts.js"></script>
 </head>
 
 <body class="min-vh-100 d-flex flex-column">
@@ -45,19 +45,14 @@
                 <span class="float-end mx-1" id='dir-stats'></span>
             </div>
             <div id='listing'>
-                <span id="path">/</span>
-                <table class="table-sm table-hover border-primary" id="table">
+                <span id="crumbs"></span>
+                <table class="table-sm w-100" id="table">
                     <colgroup>
-                        <col class="col-7">
-                        <col class="col-4">
-                        <col class="col-1">
+                        <col class="col">
+                        <col class="col-3">
+                        <col class="col-2">
                     </colgroup>
                     <tbody>
-                        <tr>
-                            <td><a class="folderup" href="../" style="color:#909090 ;"><b>&#8682; Up</b></a></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
                     </tbody>
                 </table>
                 <script>
@@ -69,23 +64,7 @@
 <a href="Rey.png">Rey.png</a>                                            06-Mar-2022 20:26              227907
 </pre><hr>
 // After Part          
-                    `
-                    const list =
-                        // Before Part
-                        [
-                            {
-                                "name": "dynmap-render",
-                                "type": "directory",
-                                "mtime": "Wed, 16 Feb 2022 10:11:06 GMT"
-                            },
-                            {
-                                "name": "Rey.png",
-                                "type": "file",
-                                "mtime": "Sun, 06 Mar 2022 20:26:54 GMT",
-                                "size": 227907
-                            }
-                        ]
-                    // After Part
+                    `                 
                 </script>
             </div>
         </div>
@@ -102,36 +81,8 @@
 </body>
 <!-- Script -->
 <script>
-    const list1 = [];
-    const matches = autoindex.matchAll(/<a href="(.+)">.+<\/a>\s+([\w-]+\s[\d:]+)\s+(\d*)/gm);
-    for (const match of matches) {
-        console.log(`${match[1]} ${match[2]} ${match[3]}`);
-        list1.push({
-            "name": match[1],
-            "type": match[1].endsWith("/"),
-            "mtime": match[2],
-            "size": match[3]
-        })
-    }
-    console.log(list1)
-    const segments = window.location.pathname.split("/")
-    const last = segments.pop() || segments.pop();
-    $("#path").text(segments.length == 0 ? "/" : last)
-
-    let fileCount = 0, dirCount = 0;
-    const tbody = $('#table').children('tbody');
-    list1.forEach(e => {
-        if (e.type == "file") {
-            tbody.append(`<tr><td><a class="link-icon" href="${e.name}">${e.name}</a></td><td>${e.mtime}</td><td>${FileSize(e.size)}</td></tr>`);
-            fileCount++;
-        } else {
-            tbody.append(`<tr><td><a class="link-icon" href="${e.name}/">${e.name}</a></td><td>${e.mtime}</td><td> - </td></tr>`);
-            dirCount++;
-        }
-    });
-
-    $("#dir-stats").text(`${dirCount} ${dirCount == 1 ? "directory" : "directories"}`);
-    $("#file-stats").text(`${fileCount} ${fileCount == 1 ? "file" : "files"}`);
+    FillBreadcrumbs()
+    FillTable()
 </script>
 
 </html>
