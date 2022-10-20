@@ -3,7 +3,7 @@ title: WMRControl
 repo: https://github.com/Virenbar/WMRControl
 github: Virenbar/WMRControl
 ---
-Small tray application for controlling state of WMR device
+A small application to control state of WMR device from the tray
 
 #### Screenshots
 

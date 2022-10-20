@@ -4,7 +4,12 @@
     {{ page.slug | inspect }}
     {%- endcomment -%}
 {%- capture debug -%}
-    id: {{page.id}}, lang: {{page.lang}}, slug: {{page.slug}}, name: {{page.name}}, layout: {{page.layout}}
+    id: {{page.id}},
+    slug: {{page.slug}},
+    lang: {{page.lang}},
+    name: {{page.name}},
+    layout: {{page.layout}},
+    category: {{page.category}}
 {%- endcapture -%}
 {% assign debug = debug | strip_newlines | split: ',' %}
 {% assign debug.test = "1234" %}

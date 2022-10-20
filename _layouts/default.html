@@ -1,4 +1,7 @@
-{% assign t = site.data.translation %}
+<!-- Globals -->
+{%- assign t = site.data.translation -%}
+{%- assign projects = site.pages | where: 'layout', 'project' -%}
+
 <!doctype html>
 <html lang="{{ page.lang | slice: 0,2 | default: "en" }}">
     <head>
@@ -16,3 +19,4 @@
         {% include scripts.html %}
     </body>
 </html>
+

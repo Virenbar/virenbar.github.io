@@ -1,10 +1,10 @@
-{%- assign tpages = site.posts | where:'slug', page.slug | sort: 'lang' -%}
+{%- assign tpages = site.posts | where: 'slug', page.slug | sort: 'lang' -%}
 {%- if tpages.size == 0 -%}
-    {%- assign tpages = site.pages | where:'id', page.id | sort: 'lang' -%}
+    {%- assign tpages = projects | where: 'name', page.name | sort: 'lang' -%}
 {%- endif -%}
-{%- comment -%}
-{%- assign debug = site.data.navigation | inspect-%}
-{%- endcomment -%}
+{%- if tpages.size == 0 -%}
+    {%- assign tpages = site.pages | where: 'id', page.id | sort: 'lang' -%}
+{%- endif -%}
 <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
     <nav class="container">
         <a class="navbar-brand mx-auto" href="{{page.langurl}}/">
@@ -13,7 +13,8 @@
                 class="d-inline-block align-top rounded-circle"
                 height="32"
                 src="https://gravatar.com/avatar/e405f42d63f70e88dec627087aec4318"
-                width="32"/> {% include gradient.html text=site.title %}
+                width="32"/>
+            {% include gradient.html text=site.title %}
         </a>
         <button
             aria-controls="global-navbar"
@@ -37,7 +38,8 @@
                     {%- endif -%}
                     <li class="{{class}}">
                         <a class="nav-link" href="{{url}}">
-                            {% include t.html id=navpage.title %}{{sr_current}}
+                            {% include t.html id=navpage.title %}
+                            {{sr_current}}
                             {%- if navpage.url contains "http" %}
                                 <span class="fas fa-external-link"></span>
                             {%- endif -%}
@@ -46,7 +48,11 @@
                 {%- endfor -%}
             </ul>
             <div class="dropdown">
-                <button aria-expanded="false" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+                <button
+                    aria-expanded="false"
+                    class="btn dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    type="button">
                     <i class="fa-solid fa-globe"></i>
                     {% include t.html id="lang" %}
                 </button>
@@ -67,3 +73,4 @@
         </div>
     </nav>
 </header>
+

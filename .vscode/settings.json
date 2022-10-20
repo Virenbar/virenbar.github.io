@@ -2,5 +2,16 @@
     "scss.validate": false,
     "[html]": {
         "editor.defaultFormatter": "sissel.shopify-liquid"
+    },
+    "liquid.format.enable": true,
+    "liquid.engine": "standard",
+    "files.associations": {
+        "*.html": "liquid",
+        "*.json.liquid": "json",
+        "*.yaml.liquid": "yaml",
+        "*.md.liquid": "markdown",
+        "*.js.liquid": "liquid-javascript",
+        "*.css.liquid": "liquid-css",
+        "*.scss.liquid": "liquid-scss"
     }
 }

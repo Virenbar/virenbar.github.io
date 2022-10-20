@@ -10,7 +10,11 @@
 
     <div class="mx-auto">
         <span class="far fa-copyright" title="Copyright"></span>
-        <span aria-controls="debug" data-bs-target="#debug" data-bs-toggle="offcanvas">{{ site.time | date: "%Y" }}</span>
+        <span
+            aria-controls="debug"
+            data-bs-target="#debug"
+            data-bs-toggle="offcanvas">{{ site.time | date: "%Y" }}
+        </span>
         Virenbar
     </div>
     <div class="d-none d-md-block">
@@ -30,16 +34,21 @@
         tabindex="-1">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Debug Tab</h5>
-            <button a class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+            <button
+                a
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                type="button"></button>
         </div>
         <div class="offcanvas-body">
             <ul>
                 {%- for item in debug -%}
-                    <li>{{item}}</li>
+                    <li>{{item}}
+                    </li>
                 {%- endfor -%}
             </ul>
             <div>
-                {{ debug | inspect}}
+                {{projects | inspect}}
             </div>
             <div>
                 {{t | inspect}}
@@ -47,3 +56,4 @@
         </div>
     </div>
 </footer>
+
