@@ -6,10 +6,6 @@ description: "The personal website of Virenbar, a .NET and TS developer living a
 plugins:
   - jekyll-sitemap
 
-# collections:
-#   projects:
-#     output: true
-
 defaults:
   - scope:
       path: ""
@@ -33,12 +29,6 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-
-  # - scope:
-  #     path: ""
-  #     type: "projects"
-  #   values:
-  #     layout: "project"
 
   - scope:
       path: "en/projects"

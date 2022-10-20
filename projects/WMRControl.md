@@ -3,12 +3,12 @@ title: WMRControl
 repo: https://github.com/Virenbar/WMRControl
 github: Virenbar/WMRControl
 ---
-Small tray application for controlling state of WMR device
+A small application to manage the state of a WMR device
 
-#### Screenshots
+#### Скриншоты
 
-Main window  
-![modesets](/assets/images/wmrcontrol/window.png){: .img-fluid}
+Основное окно  
+![main](/assets/images/wmrcontrol/window.png){: .img-fluid}
 
-Tray window  
+Окно трея  
 ![tray](/assets/images/wmrcontrol//tray.png){: .img-fluid}

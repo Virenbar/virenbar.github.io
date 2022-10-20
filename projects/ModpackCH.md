@@ -3,8 +3,8 @@ title: ModpacksCH
 repo: https://github.com/Virenbar/ModpacksCH
 github: Virenbar/ModpacksCH
 ---
-Console application for downloading modpacks from modpacks.ch
+Консольное приложение для загрузки модпаков с сайта modpacks.ch
 
-Allows downloading modpacks from [FTB](https://feed-the-beast.com/modpack) without installing FTB App
+Позволяет загружать модпаки из [FTB](https://feed-the-beast.com/modpack) без установки FTB App
 
 ![console](/assets/images/modpackch/console.png){: .img-thumbnail}

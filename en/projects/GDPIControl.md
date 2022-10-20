@@ -3,14 +3,14 @@ title: GDPIControl
 repo: https://github.com/Virenbar/GDPIControl
 github: Virenbar/GDPIControl
 ---
-Small tray application for controlling GoodbyeDPI
+A small application to control GoodbyeDPI from the tray
 
 #### Features
 
-- Switching GoodbyeDPI on/off from tray
-- Selecting custom options
-- Updating blacklist
-- Autostart at logon
+* Switching GoodbyeDPI on/off from tray
+* Selecting custom options
+* Updating blacklist
+* Autostart at logon
 
 #### Screenshots
 
