@@ -1,6 +1,9 @@
+<!-- {%- assign projects = site.pages | where:'layout', 'project' | where:'lang', page.lang -%} -->
+{%- assign tprojects = projects | where:'lang', page.lang -%}
+
 <h3>{{page.title}}</h3>
 <ul>
-    {% for project in site.projects %}
+    {% for project in projects %}
         <li>
             <h4>
                 <a href="{{ project.url }}">{{ project.title }}</a>

@@ -1,10 +1,10 @@
 {%- assign tpages = site.posts | where:'slug', page.slug | sort: 'lang' -%}
 {%- if tpages.size == 0 -%}
+    {%- assign tpages = projects | where:'name', page.name | sort: 'lang' -%}
+{%- endif -%}
+{%- if tpages.size == 0 -%}
     {%- assign tpages = site.pages | where:'id', page.id | sort: 'lang' -%}
 {%- endif -%}
-{%- comment -%}
-{%- assign debug = site.data.navigation | inspect-%}
-{%- endcomment -%}
 <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
     <nav class="container">
         <a class="navbar-brand mx-auto" href="{{page.langurl}}/">
