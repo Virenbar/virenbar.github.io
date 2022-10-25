@@ -1,0 +1,109 @@
+/*
+Glitch effect by Fabio
+https://freefrontend.com/css-text-glitch-effects/
+https://codepen.io/fabiowallner/pen/ozZoYo
+*/
+
+.glitch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glitch {
+    position: relative;
+}
+
+h1.glitch {
+    font-weight: 800;
+    font-size: 6em;
+    letter-spacing: -1px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data);
+    position: absolute;
+    background: #222;
+    overflow: hidden;
+    top: 0;
+}
+
+.glitch::before {
+    left: 3px;
+    text-shadow: -2px 0 red;
+    animation: glitch-animation-1 2s linear infinite alternate-reverse;
+}
+
+.glitch::after {
+    left: -3px;
+    text-shadow: -2px 0 blue;
+    animation: glitch-animation-2 2s linear infinite alternate-reverse;
+}
+
+@keyframes glitch-animation-1 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(calc(1/$steps)))} {
+            clip: rect(random(150)+px, auto, random(150)+px, 0px);
+        }
+    }
+}
+
+@keyframes glitch-animation-2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(calc(1/$steps)))} {
+            clip: rect(random(150)+px, auto, random(150)+px, 0px);
+        }
+    }
+}
+
+
+/*
+<style>
+  body, html{overflow:hidden;}
+.glitch-wrapper{
+animation:glitch 2s linear infinite;
+}
+.glitch-text{
+z-index:2;
+opacity:.9;
+text-shadow:0px 0px 3px white;
+animation:glitch 3s infinite;
+font-size:4em;
+}
+.glitch-text::before{
+content:'ERROR 404';
+color:black;
+text-shadow:0px 0px 5px 10px black!IMPORTANT;
+filter: blur(7px);
+position:absolute;
+z-index:-10;
+font-size:2em;
+left:0px;
+right:0px;
+margin-top:-30px;
+opacity:.5;
+}
+
+@keyframes glitch{
+ 3%{text-shadow:7px 7px 0px red;}
+6%{text-shadow:-9px 4px 0px blue;transform:translate(4px,-10px) skewX(3240deg);}
+7%{text-shadow:3px -4px 0px green;}
+9%{text-shadow:0px 0px 3px white;transform:translate(0px,0px) skewX(0deg);}
+2% , 54%{transform:translateX(0px) skew(0deg);}
+55%{transform:translate(-2px,6px) skew(-5530deg);}
+56%{text-shadow:0px 0px 3px white;transform:translate(0px,0px) skew(0deg);}
+57%{text-shadow:7px 7px 0px red;transform:translate(4px,-10px) skew(-70deg);}
+58%{text-shadow:0px 0px 3px white;transform:translate(0px,0px) skew(0deg);}
+62%{text-shadow:3px -4px 0px green;transform:translate(0px,20px) skew(0deg);}
+63%{text-shadow:0px 0px 3px white;transform:translate(4px,-2px) skew(0deg);}
+64%{transform:translate(1px,3px) skew(-230deg);}
+65%{transform:translate(-7px,2px) skew(120deg);}
+66%{transform:translate(0px,0px) skew(0deg);}
+}
+</style></temp>
+*/

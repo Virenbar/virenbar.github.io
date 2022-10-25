@@ -1,0 +1,32 @@
+@mixin define-gradient($gradient-colors) {
+    @for $i from 1 through length($gradient-colors) {
+        &> :nth-child(#{length($gradient-colors)}n+#{$i % length($gradient-colors)}) {
+            color: #{nth($gradient-colors, $i)};
+        }
+    }
+}
+
+.gradient {
+    &>* {
+        display: inline-block;
+    }
+}
+
+.gradient-green {
+    @include define-gradient([#009000, #008500, #008000]);
+}
+
+.gradient-green:hover,
+.gradient-green:focus {
+    @include define-gradient([#00a000, #009500, #009000]);
+}
+
+.gradient-rainbow {
+    @include define-gradient([ #FC5656,
+        #FF9008,
+        #ffed00,
+        #00C83B,
+        #00e1ff,
+        #86ABFF,
+        #E986F9]);
+}

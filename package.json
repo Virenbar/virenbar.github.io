@@ -1,0 +1,33 @@
+{
+  "name": "virenbar.github.io",
+  "version": "1.0.0",
+  "description": "Site for exporting emojis and stickers from discord server as ZIP archive",
+  "author": "Virenbar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Virenbar/virenbar.github.io.git"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "@nuxt/content": "^2.2.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nuxt": "^3.0.0-rc.12",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "typescript": "^4.8.4"
+  },
+  "private": true
+}
