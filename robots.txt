@@ -1,5 +1,10 @@
 User-agent: * 
 Allow: /
 Sitemap: https://virenbar.ru/sitemap.xml
+
+# Single page projects
+Sitemap: https://virenbar.ru/sitemap-projects.xml
+
+# Documentation sites
 Sitemap: https://virenbar.ru/FIAS_GAR/sitemap.xml 
 Sitemap: https://virenbar.ru/PochtaAPI/sitemap.xml
