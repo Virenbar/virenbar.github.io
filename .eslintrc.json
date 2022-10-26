@@ -1,21 +1,15 @@
 {
-    "env": {
-        "node": true,
-        "es2021": true
-    },
     "parser": "@typescript-eslint/parser",
-    "plugins": [
-        "eslint-plugin-import",
-        "@typescript-eslint"
-    ],
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "@nuxtjs/eslint-config-typescript"
     ],
-    "parserOptions": {
-        "sourceType": "module"
-    },
     "rules": {
+        "indent": [
+            "error",
+            4
+        ],
         "@typescript-eslint/type-annotation-spacing": "warn",
         "space-in-parens": "warn",
         "quotes": "warn",
@@ -25,12 +19,6 @@
             "warn",
             {
                 "max": 1
-            }
-        ],
-        "lines-around-comment": [
-            "warn",
-            {
-                "beforeLineComment": true
             }
         ]
     }

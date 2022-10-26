@@ -15,18 +15,21 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^2.4.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.2.0",
+    "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
-    "@nuxt/content": "^2.2.0",
     "eslint": "^8.24.0",
     "eslint-plugin-import": "^2.26.0",
     "nuxt": "^3.0.0-rc.12",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
+    "sitemap": "^7.1.1",
     "typescript": "^4.8.4"
   },
   "private": true

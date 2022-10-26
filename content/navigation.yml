@@ -1,0 +1,12 @@
+- title: Home
+  url: /
+#- title: About
+#  url: /about
+- title: Projects
+  url: /projects
+- title: Blog
+  url: /blog
+- title: Hardware
+  url: /hardware
+#- title: Status
+#  url: https://stats.uptimerobot.com/X0WxrI4WxW
