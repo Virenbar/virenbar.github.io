@@ -1,13 +1,13 @@
 <script setup lang="ts">
-//const d = useRoute()
-//const seo_title = 
-const og_type = "website"
+// const d = useRoute()
+// const seo_title =
+const OGType = 'website'
 </script>
 <template>
-    <div>
+  <div>
 
-        <Head>
-            <Meta property="og:type" :content="og_type" />
-        </Head>
-    </div>
+    <Head>
+      <Meta property="og:type" :content="OGType" />
+    </Head>
+  </div>
 </template>

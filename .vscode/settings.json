@@ -2,8 +2,10 @@
     "editor.formatOnSave": true,
     "eslint.validate": [
         "javascript",
-        "typescript"
+        "typescript",
+        "vue"
     ],
+    "editor.autoIndent": "keep",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
         "source.fixAll.markdownlint": true,
@@ -12,5 +14,15 @@
     "[markdown]": {
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true
-    }
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar",
+    },
+    "html.format.wrapAttributes": "preserve",
+    "cSpell.words": [
+        "nuxt"
+    ]
 }
