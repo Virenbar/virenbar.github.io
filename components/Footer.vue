@@ -49,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-const date = new Date().getFullYear()
-const items = [{ T1: 'T1' }, { T2: 'T2' }]
-const C = useContent()
+const date = new Date().getFullYear();
+const items = [{ T1: "T1" }, { T2: "T2" }];
+const C = useContent();
 </script>
