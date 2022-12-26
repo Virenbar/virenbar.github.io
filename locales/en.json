@@ -1,0 +1,22 @@
+{
+  "language": "English",
+  "description": "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg",
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "hardware": "Hardware",
+    "blog": "Blog"
+  },
+  "hardware": {
+    "status": "Status",
+    "pc": "My PC",
+    "server": "My Server",
+    "motherboard": "Motherboard",
+    "cpu": "Processor",
+    "memory": "Memory",
+    "gpu": "Graphics card",
+    "storage": "Storage",
+    "os": "OS",
+    "monitor": "Monitor"
+  }
+}

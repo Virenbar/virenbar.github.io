@@ -49,7 +49,8 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n();
 const date = new Date().getFullYear();
-const items = [{ T1: "T1" }, { T2: "T2" }];
+const items = [{ Language: t("language") }, { T1: "T1" }, { T2: "T2" }];
 const C = useContent();
 </script>

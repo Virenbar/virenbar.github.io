@@ -1,8 +1,3 @@
-<script setup lang="ts">
-// const d = useRoute()
-// const seo_title =
-const OGType = "website";
-</script>
 <template>
   <div>
     <Head>
@@ -10,3 +5,8 @@ const OGType = "website";
     </Head>
   </div>
 </template>
+<script setup lang="ts">
+// const d = useRoute()
+// const seo_title =
+const OGType = "website";
+</script>

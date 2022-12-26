@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown">
-    s
+  <div>
+    Blog
   </div>
 </template>

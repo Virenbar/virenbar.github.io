@@ -1,34 +1,34 @@
 pc:
-  Motherboard:
+  motherboard:
     - MSI B450-A PRO MAX
-  CPU:
+  cpu:
     - AMD Ryzen 5 3600 AM4 OEM
-  Memory:
+  memory:
     - Kingston DDR4 16Gb (2x8GB) 3200 MHz (HX432C16PB3K2/16)
-  GPU:
+  gpu:
     - ASUS Dual GeForce RTX 3060 Ti OC Edition
-  Storage:
+  storage:
     - 250 GB Samsung 970 EVO Plus MZ-V7S250BW
     - 1 TB SSD WD Blue [WDS100T2B0A]
     - 2 TB Seagate BarraCuda [ST2000DM008]
     - 1 TB WD Black [WD1002FAEX]
-  OS:
+  os:
     - Windows 10
-  Monitor:
+  monitor:
     - AOC Gaming G2460VQ6
     - AOC 22B2H 21.5
 
 server:
-  Motherboard:
+  motherboard:
     - ASUS P8Z77-V LE PLUS
-  CPU:
+  cpu:
     - Intel Core i5-3570 OEM
-  Memory:
+  memory:
     - Corsair DDR3 16GB (4x4GB) 1866MHz (CMZ8GX3M2A1866C9)
-  GPU:
+  gpu:
     - MSI GTX 1060 6GB (Used for mining)
-  Storage:
+  storage:
     - 256 GB Samsung 850 EVO MZ-75E250BW
     - 640 GB WD Green [WD6400AACS]
-  OS:
+  os:
     - Ubuntu 20.04

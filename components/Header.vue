@@ -1,21 +1,60 @@
 <template>
-  <header class="navbar navbar-expand-lg navbar-dark px-3 sticky-top">
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
     <nav class="container font-monospace">
-      <a class="navbar-brand mx-auto" href="https://virenbar.github.io/FTB/">
-        <img height="36" width="112" src="https://www.feed-the-beast.com/_next/static/media/logo.2265aa43.svg" alt="FTB">
-      </a>
-      <button aria-controls="global-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
-        <span class="navbar-toggler-icon" />
+      <NuxtLink class="navbar-brand mx-auto" :to="localePath('/')">
+        <img alt="" class="d-inline-block align-top rounded-circle" height="32" src="https://gravatar.com/avatar/e405f42d63f70e88dec627087aec4318" width="32">
+        {{ " " }}
+        <Gradient text="@Virenbar" />
+      </NuxtLink>
+      <button aria-controls="global-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#global-navbar" data-bs-toggle="collapse" type="button">
+        <i class="bi bi-three-dots" />
       </button>
+
       <div id="navbar" class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <NuxtLink class="nav-link" href="/home">
-              Home
-            </NuxtLink>
-          </li>
+        <ul class="navbar-nav me-auto">
+          <template v-for="link in links" :key="link.url">
+            <li class="nav-item" :class="path.endsWith(link.url) ? 'current' : ''">
+              <NuxtLink class="nav-link" :to="localePath(link.url)">
+                {{ $t(`header.${link.id}`) }}
+              </NuxtLink>
+            </li>
+          </template>
         </ul>
+
+        <div class="dropdown">
+          <button aria-expanded="false" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+            <i class="fa-solid fa-globe" />
+            {{ $t("language") }}
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-dark" style="width:100%; min-width: 100%;">
+            <template v-for="locale in locales.available" :key="locale.code">
+              <li>
+                <NuxtLink class="dropdown-item" :class="locale.code == current ? 'active' : ''" :to="switchLocalePath(locale.code)">
+                  {{ $t("language", 1, { locale: locale.code }) }}
+                </NuxtLink>
+              </li>
+            </template>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
 </template>
+<script setup lang="ts">
+const localePath = useLocalePath();
+const switchLocalePath = useSwitchLocalePath();
+//
+const path = useRoute().path;
+const links = (await queryContent("navigation").findOne()).body as Link[];
+const { locale: current } = useI18n();
+const locales = useLocales();
+//console.log(links);
+//console.log(locales.available);
+//console.log(locales.current);
+interface Link {
+  title: string
+  url: string
+  id: string
+}
+</script>
