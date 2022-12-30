@@ -4,14 +4,13 @@ pc:
   cpu:
     - AMD Ryzen 5 3600 AM4 OEM
   memory:
-    - Kingston DDR4 16Gb (2x8GB) 3200 MHz (HX432C16PB3K2/16)
+    - Patriot DDR4 32GB (2x16GB) 3200 MHz (PVB432G320C6K)
   gpu:
     - ASUS Dual GeForce RTX 3060 Ti OC Edition
   storage:
     - 250 GB Samsung 970 EVO Plus MZ-V7S250BW
     - 1 TB SSD WD Blue [WDS100T2B0A]
     - 2 TB Seagate BarraCuda [ST2000DM008]
-    - 1 TB WD Black [WD1002FAEX]
   os:
     - Windows 10
   monitor:
@@ -26,9 +25,10 @@ server:
   memory:
     - Corsair DDR3 16GB (4x4GB) 1866MHz (CMZ8GX3M2A1866C9)
   gpu:
-    - MSI GTX 1060 6GB (Used for mining)
+    - MSI GTX 1060 6GB
   storage:
     - 256 GB Samsung 850 EVO MZ-75E250BW
     - 640 GB WD Green [WD6400AACS]
+    - 1 TB WD Black [WD1002FAEX]
   os:
-    - Ubuntu 20.04
+    - Ubuntu 22.04

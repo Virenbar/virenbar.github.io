@@ -18,7 +18,8 @@
   "dependencies": {
     "@nuxtjs/sitemap": "^2.4.0",
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "bootswatch": "^5.2.3"
   },
   "devDependencies": {
     "@nuxt/content": "^2.2.2",

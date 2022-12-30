@@ -22,5 +22,12 @@
     ],
     "cSpell.words": [
         "nuxt"
-    ]
+    ],
+    "i18n-ally.localesPaths": [
+        "locales"
+    ],
+    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.annotations": false,
+    "i18n-ally.editor.preferEditor": true,
+    "i18n-ally.keystyle": "nested"
 }

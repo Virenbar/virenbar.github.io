@@ -1,9 +1,9 @@
 <template>
-  <Favicon />
+  <PageFavicon />
   <div class="min-vh-100 d-flex flex-column">
-    <Header />
+    <PageHeader />
     <Main />
-    <Footer />
+    <PageFooter />
   </div>
 </template>
 <script setup lang="ts">

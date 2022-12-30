@@ -1,11 +1,19 @@
 {
   "language": "Русский",
   "description": "Персональный сайт Virenbar'а .NET и TS разработчика, живущего и работающего на Урале в Екатеринбурге",
-  "header": {
+  "page": {
     "home": "Главная",
     "projects": "Проекты",
     "hardware": "Железо",
     "blog": "Блог"
+  },
+  "home": {
+    "P1": "Привет, я Virenbar и это мой персональный сайт.",
+    "P2": "Я .NET(C#,VB) и TypeScript разработчик.",
+    "discord": "Virenbar#4236 в"
+  },
+  "blog": {
+    "title": "Последние посты"
   },
   "hardware": {
     "status": "Статус",

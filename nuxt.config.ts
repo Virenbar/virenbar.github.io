@@ -9,7 +9,9 @@ export default defineNuxtConfig({
     "~/assets/css/styles.scss"
   ],
   content: {
-    documentDriven: true
+    documentDriven: true,
+    locales: ["ru", "en", "es"],
+    defaultLocale: "ru"
   },
   i18n: {
     locales: [

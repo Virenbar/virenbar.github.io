@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h3>{{ $t("header.hardware") }}</h3>
+    <Title>{{ title }}</Title>
+    <h3>{{ title }}</h3>
     <ul id="myTab" class="nav nav-tabs" role="tablist">
       <li class="nav-item" role="presentation">
         <button id="status-tab" aria-controls="status-tab-pane" aria-selected="true" class="nav-link active" data-bs-target="#status-tab-pane" data-bs-toggle="tab" role="tab" type="button">
@@ -23,27 +24,29 @@
         <iframe class="htframe" onload="iFrameResize([{log:false}],'.htframe')" sandbox="allow-scripts allow-same-origin allow-popups" scrolling="no" src="https://wl.hetrixtools.com/r/fb1f9f0d69928c847a25c77610824d31/" style="border:none;" width="100%" />
       </div>
       <div id="pc-tab-pane" aria-labelledby="pc-tab" class="tab-pane fade" role="tabpanel" tabindex="0">
-        <Table prefix="hardware" :data="hardware.pc" />
+        <TableList :data="pc" />
       </div>
       <div id="server-tab-pane" aria-labelledby="server-tab" class="tab-pane fade" role="tabpanel" tabindex="0">
-        <Table prefix="hardware" :data="hardware.server" />
+        <TableList :data="server" />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-const { t } = useI18n();
 useHead({
-  title: t("header.hardware"),
   script: [{ src: "https://cdn.jsdelivr.net/gh/davidjbradshaw/iframe-resizer@master/js/iframeResizer.min.js", type: "text/javascript" }]
 });
+const { t } = useI18n();
+const title = t("page.hardware");
 
-const hardware = (await queryContent("hardware").findOne()) as unknown as ParsedContent;
-console.log(hardware);
-
-interface ParsedContent {
-  pc: Hardware
-  server: Hardware
+const pc: Record<string, string[]> = {};
+const server: Record<string, string[]> = {};
+const hardware = await queryContent("hardware").findOne();
+for (const key in hardware.pc) {
+  pc[t("hardware." + key)] = hardware.pc[key];
 }
-interface Hardware { [index: string]: string[] }
+for (const key in hardware.server) {
+  server[t("hardware." + key)] = hardware.server[key];
+}
+console.log(hardware);
 </script>
