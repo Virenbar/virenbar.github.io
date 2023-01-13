@@ -11,7 +11,10 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
     locales: ["ru", "en", "es"],
-    defaultLocale: "ru"
+    defaultLocale: "ru",
+    markdown: {
+      anchorLinks: false
+    }
   },
   i18n: {
     locales: [
@@ -21,6 +24,9 @@ export default defineNuxtConfig({
       }, {
         code: "en",
         file: "en.json"
+      }, {
+        code: "es",
+        file: "es.json"
       }
     ],
     defaultLocale: "ru",
@@ -28,7 +34,8 @@ export default defineNuxtConfig({
     //lazy: true,
     vueI18n: {
       legacy: false,
-      locale: "ru"
+      locale: "ru",
+      fallbackLocale: "en"
     }
   },
   nitro: {

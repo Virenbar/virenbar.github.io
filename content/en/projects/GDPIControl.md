@@ -15,8 +15,8 @@ A small application to control GoodbyeDPI from the tray
 #### Screenshots
 
 Tray window  
-![tray](/images/gdpicontrol/tray.png){: .img-fluid}
+![tray](/images/gdpicontrol/tray.png){ .img-fluid}
 
 Main window  
-![modesets](/images/gdpicontrol/modesets.png){: .img-fluid}
-![custom](/images/gdpicontrol/custom.png){: .img-fluid}
+![modesets](/images/gdpicontrol/modesets.png){ .img-fluid}
+![custom](/images/gdpicontrol/custom.png){ .img-fluid}

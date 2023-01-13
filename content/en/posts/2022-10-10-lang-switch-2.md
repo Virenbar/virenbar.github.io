@@ -22,5 +22,5 @@ Now in `_config.yml` for `projects` and `en/project` it says `layout: "project"`
 And you can get all projects for the current language like this:  
 `{%- assign projects = site.pages | where: 'layout', 'project' | where: 'lang', page.lang -%}`  
 Or for another language:  
-`{%- assign projects = site.pages | where: 'layout', 'project' -%}`
+`{%- assign projects = site.pages | where: 'layout', 'project' -%}`  
 `{%- assign tpages = projects | where: 'name', page.name | sort: 'lang' -%}`

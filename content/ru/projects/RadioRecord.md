@@ -9,4 +9,4 @@ github: Virenbar/RadioRecord
 * [Плейлисты для аудиоплееров](playlists)
 * [Сайт с ссылками на потоки](https://virenbar.github.io/RadioRecord/)
 
-![site](/images/radiorecord/site.png){: .img-thumbnail}
+![site](/images/radiorecord/site.png){ .img-thumbnail}

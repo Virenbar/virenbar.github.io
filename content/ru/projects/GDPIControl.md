@@ -15,8 +15,8 @@ github: Virenbar/GDPIControl
 #### Скриншоты
 
 Окно трея  
-![tray](/images/gdpicontrol/tray.png){: .img-fluid}
+![tray](/images/gdpicontrol/tray.png){ .img-fluid}
 
 Основное окно  
-![modesets](/images/gdpicontrol/modesets.png){: .img-fluid}
-![custom](/images/gdpicontrol/custom.png){: .img-fluid}
+![modesets](/images/gdpicontrol/modesets.png){ .img-fluid}
+![custom](/images/gdpicontrol/custom.png){ .img-fluid}

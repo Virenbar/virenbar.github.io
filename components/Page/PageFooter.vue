@@ -50,11 +50,12 @@
 <script setup lang="ts">
 const { t, locale } = useI18n();
 const date = new Date().getFullYear();
-//const content = useContent();
+const page = await usePageLocale();
 const query = await queryContent(locale.value).find();
 const items: Record<string, string> = {
   Language: t("language"),
   T1: "T1",
   T2: "T2"
 };
+console.log(page);
 </script>

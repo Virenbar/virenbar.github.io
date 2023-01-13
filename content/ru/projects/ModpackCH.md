@@ -7,4 +7,4 @@ github: Virenbar/ModpacksCH
 
 Позволяет загружать модпаки из [FTB](https://feed-the-beast.com/modpack) без установки FTB App
 
-![console](/images/modpackch/console.png){: .img-thumbnail}
+![console](/images/modpackch/console.png){ .img-thumbnail}

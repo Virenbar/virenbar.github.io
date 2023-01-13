@@ -13,7 +13,7 @@ github: Virenbar/discord-emoji-export
 * Скачивание стикеров в ZIP-архиве
 * Экспорт эмодзи в формате JSON (со ссылками на эмодзи)
 
-![page](/images/discord-emoji-export/page.png){: .img-fluid}
+![page](/images/discord-emoji-export/page.png){ .img-fluid}
 
 #### Использованные ресурсы
 

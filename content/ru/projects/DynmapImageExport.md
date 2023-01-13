@@ -11,4 +11,4 @@ github: Virenbar/DynmapImageExport
 
 `.\DynmapImageExport m https://map.minecrafting.ru/ world flat [0,100,0] [5,6,5,5] 2`
 
-![terminal](/images/dynmap-image-export/Minecrafting.ru-se_view.png){: .img-fluid}
+![terminal](/images/dynmap-image-export/Minecrafting.ru-se_view.png){ .img-fluid}

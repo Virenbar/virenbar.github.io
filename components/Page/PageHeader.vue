@@ -3,7 +3,7 @@
     <nav class="container font-monospace">
       <NuxtLink class="navbar-brand mx-auto" :to="localePath('/')">
         <img alt="" class="d-inline-block align-top rounded-circle" height="32" src="https://gravatar.com/avatar/e405f42d63f70e88dec627087aec4318" width="32">
-        {{ }}
+        {{}}
         <Gradient text="@Virenbar" />
       </NuxtLink>
       <button aria-controls="global-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#global-navbar" data-bs-toggle="collapse" type="button">
@@ -15,7 +15,7 @@
           <template v-for="link in links" :key="link.url">
             <li class="nav-item" :class="{ current: route.path.endsWith(link.url) }">
               <NuxtLink class="nav-link" :to="localePath(link.url)">
-                {{ $t(`page.${link.id}`) }}
+                {{ $t(`page.${link.id }`) }}
               </NuxtLink>
             </li>
           </template>
@@ -29,7 +29,7 @@
           </button>
 
           <ul class="dropdown-menu dropdown-menu-dark" style="width:100%; min-width: 100%;">
-            <template v-for="locale in locales.available" :key="locale.code">
+            <template v-for="locale in available" :key="locale.code">
               <li>
                 <NuxtLink class="dropdown-item" :class="{ active: locale.code == current }" :to="switchLocalePath(locale.code)">
                   {{ $t("language", 1, { locale: locale.code }) }}
@@ -49,11 +49,8 @@ const switchLocalePath = useSwitchLocalePath();
 //
 const route = useRoute();
 const links = (await queryContent("navigation").findOne()).body as Link[];
-const { locale: current } = useI18n();
-const locales = useLocales();
-console.log(switchLocalePath("ru"));
-//console.log(locales.available);
-//console.log(locales.current);
+const { available, current } = useLocales();
+
 interface Link {
   title: string
   url: string
