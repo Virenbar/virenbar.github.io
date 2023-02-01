@@ -1,34 +1,38 @@
 import { ComputedRef } from "vue";
 import { LocaleObject } from "vue-i18n-routing";
 
-const locales = ["ru", "en", "es"];
-
 export default async function () {
-  const switchLocalePath = useSwitchLocalePath();
-  const route = useRoute();
   const I18n = useI18n();
-
   const available = I18n.locales as ComputedRef<LocaleObject[]>;
   const current = I18n.locale;
+
+  const locales = ref<string[]>([]);
+  locales.value = available.value.map(L => L.code); //["ru", "en", "es"];
+
+  const switchLocalePath = useSwitchLocalePath();
+  const route = useRoute();
   const path = ref("");
   const pages = ref<Page[]>([]);
 
-  async function ff() {
+  async function checkPages() {
     path.value = switchLocalePath("ru");
     pages.value = [];
-    for (const locale of locales) {
+    for (const locale of locales.value) {
       try {
-        const page = await queryContent({
+        const query = await queryContent({
           where: [
             { _locale: locale },
             { _path: path.value }
           ]
-        }).findOne();
-        pages.value.push({
-          locale,
-          path: page._path,
-          id: page._id
-        });
+        }).find();
+        if (query.length) {
+          const page = query[0];
+          pages.value.push({
+            locale,
+            path: page._path,
+            id: page._id
+          });
+        }
       } catch (error) {
         console.log(error);
       }
@@ -36,7 +40,7 @@ export default async function () {
     console.log(pages.value);
   }
 
-  watchEffect(ff);
+  watchEffect(checkPages);
 
   return {
     current,

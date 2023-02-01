@@ -29,10 +29,10 @@
           </button>
 
           <ul class="dropdown-menu dropdown-menu-dark" style="width:100%; min-width: 100%;">
-            <template v-for="locale in available" :key="locale.code">
+            <template v-for="locale in locales" :key="locale">
               <li>
-                <NuxtLink class="dropdown-item" :class="{ active: locale.code == current }" :to="switchLocalePath(locale.code)">
-                  {{ $t("language", 1, { locale: locale.code }) }}
+                <NuxtLink class="dropdown-item" :class="{ active: locale == current }" :to="switchLocalePath(locale)">
+                  {{ $t("language", 1, { locale: locale }) }}
                 </NuxtLink>
               </li>
             </template>
@@ -43,20 +43,17 @@
   </header>
 </template>
 <script setup lang="ts">
-const props = defineProps<Props>();
+const { current, locales } = useLocales();
 const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
 //
 const route = useRoute();
 const links = (await queryContent("navigation").findOne()).body as Link[];
-const { available, current } = useLocales();
 
 interface Link {
   title: string
   url: string
   id: string
 }
-interface Props {
-  langs?: string[]
-}
+
 </script>

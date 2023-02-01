@@ -10,7 +10,7 @@
 
     <div class="mx-auto">
       <span class="far fa-copyright" title="Copyright" />
-      {{ }}
+      {{}}
       <span aria-controls="debug" data-bs-target="#debug" data-bs-toggle="offcanvas"> {{ date }} </span>
       Virenbar
     </div>
@@ -33,12 +33,11 @@
       </div>
       <div class="offcanvas-body">
         <ul>
-          <li>Language: {{ $t('language') }}({{ locale }})</li>
-          <li>Path: {{ $route.path }} ({{ useSwitchLocalePath()("ru") }})</li>
+          <li>Locales: {{ locales.join(", ") }}</li>
+          <li>Language: {{ $t('language') }}({{ current }})</li>
+          <li>Path(default):<br> {{ path("ru") }}</li>
+          <li>Path(locale):<br> {{ $route.path }}</li>
         </ul>
-        <div>
-          {{ query }}
-        </div>
         <ul v-for="(value, key) in items" :key="key">
           <li>{{ key }} : {{ value }}</li>
         </ul>
@@ -48,14 +47,12 @@
 </template>
 
 <script setup lang="ts">
-const { t, locale } = useI18n();
+const { current, locales } = useLocales();
 const date = new Date().getFullYear();
-const page = await usePageLocale();
-const query = await queryContent(locale.value).find();
+const path = useSwitchLocalePath();
+
 const items: Record<string, string> = {
-  Language: t("language"),
   T1: "T1",
   T2: "T2"
 };
-console.log(page);
 </script>
