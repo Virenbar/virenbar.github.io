@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div v-if="post" class="card">
     <div class="card-header d-flex justify-content-between">
       <h4>{{ post.title }}</h4>
       <span class="text-muted">
@@ -19,16 +19,12 @@
       </nav> -->
     </div>
   </div>
+  <ErrorNotFound v-else />
 </template>
 <script setup lang="ts">
-const { locale } = useI18n();
-const path = useSwitchLocalePath()("ru");
-const post = (await queryContent({
-  where: [
-    { _locale: locale.value },
-    { _path: path }
-  ]
-}).findOne());
+const { getPost } = useDocument();
+const post = await getPost();
+
 // setResponseStatus(404)
 //{%- assign next = site.posts | where_exp: "item", "item.lang == page.lang and item.date > page.date" | last -%}
 //{%- assign previous = site.posts | where_exp: "item", "item.lang == page.lang and item.date < page.date" | first -%}

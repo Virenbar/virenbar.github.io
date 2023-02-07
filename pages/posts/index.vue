@@ -29,6 +29,4 @@ const posts = (await queryContent({
     { _path: { $contains: "posts" } }
   ]
 }).sort({ date: -1 }).find()) as MarkdownParsedContent[];
-console.log(locale.value);
-console.log(posts);
 </script>

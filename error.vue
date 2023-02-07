@@ -1,3 +1,3 @@
 <template>
-  <ErrorNotFound />
+  Error
 </template>

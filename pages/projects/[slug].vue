@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div v-if="project" class="card">
     <Title>{{ project.title }}</Title>
     <div class="card-header d-flex justify-content-between">
       <h4>{{ project.title }}</h4>
@@ -20,6 +20,7 @@
       </div>
     </div>
   </div>
+  <ErrorNotFound v-else />
 </template>
 <script setup lang="ts">
 const { getProject } = useDocument();

@@ -26,5 +26,11 @@
     "storage": "Storage",
     "os": "OS",
     "monitor": "Monitor"
+  },
+  "error": {
+    "page-not-found": {
+      "title": "Page not found",
+      "body": "The requested page could not be found"
+    }
   }
 }

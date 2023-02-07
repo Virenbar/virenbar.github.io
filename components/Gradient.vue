@@ -1,5 +1,5 @@
 <template>
-  <span class="sr-only">{{ props.text }}</span>
+  <!-- <span class="sr-only">{{ props.text }}</span> -->
   <span aria-hidden="true" class="gradient gradient-green">
     <span v-for="char in props.text" :key="char">{{ char }}</span>
   </span>

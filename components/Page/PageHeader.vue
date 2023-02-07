@@ -48,7 +48,9 @@ const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
 //
 const route = useRoute();
-const links = (await queryContent("navigation").findOne()).body as Link[];
+const links = (await queryContent("navigation").findOne()).header as Link[];
+
+console.log(route.path);
 
 interface Link {
   title: string

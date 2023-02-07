@@ -48,5 +48,4 @@ for (const key in hardware.pc) {
 for (const key in hardware.server) {
   server[t("hardware." + key)] = hardware.server[key];
 }
-console.log(hardware);
 </script>

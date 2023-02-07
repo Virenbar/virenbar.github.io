@@ -24,10 +24,13 @@ async function getProjects() {
 }
 
 async function getProject() {
-  //const path = useSwitchLocalePath()("ru");
-  const path = useLocalePath()(useRoute().path, "ru");
-  console.log(path);
-  return await getQuery(path).findOne() as Project;
+  try {
+    const path = useSwitchLocalePath()("ru");
+    //const path = useLocalePath()(useRoute().path, "ru");
+    return await getQuery(path).findOne() as Project;
+  } catch (error) {
+    return null;
+  }
 }
 
 async function getPosts() {
@@ -35,9 +38,15 @@ async function getPosts() {
 }
 
 async function getPost() {
-  const path = useSwitchLocalePath()("ru");
-  return await getQuery(path).findOne() as Post;
+  try {
+    const path = useSwitchLocalePath()("ru");
+    return await getQuery(path).findOne() as Post;
+  } catch (error) {
+    return null;
+  }
 }
+
+// type Document = Omit<MarkdownParsedContent, "_locale"> & { _locale?: string }
 
 interface Project extends MarkdownParsedContent {
   repo?: string
@@ -46,3 +55,4 @@ interface Project extends MarkdownParsedContent {
 interface Post extends MarkdownParsedContent {
   date: string
 }
+
