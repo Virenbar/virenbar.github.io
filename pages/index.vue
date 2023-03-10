@@ -32,6 +32,10 @@
         <a class="m-2" href="https://www.youtube.com/channel/UCrIlM5foRUY6w5RlGr0ccsw">
           <i class="fa-brands fa-youtube fa-2xl fa-fw" />
         </a>
+        <a class="m-2" href="https://music.yandex.ru/users/AD-42/playlists">
+          <!-- <img src="@/assets/icon/yandex-music.svg"> -->
+          <IconYM class="fa-2xl fa-fw" />
+        </a>
       </p>
       <p class="card-text">
         {{ $t("home.discord") }}

@@ -13,9 +13,9 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <template v-for="link in links" :key="link.url">
-            <li class="nav-item" :class="{ current: route.path.endsWith(link.url) }">
+            <li class="nav-item" :class="{ current: localePath($route.path, 'ru').endsWith(link.url) }">
               <NuxtLink class="nav-link" :to="localePath(link.url)">
-                {{ $t(`page.${link.id }`) }}
+                {{ $t(`page.${link.id}`) }}
               </NuxtLink>
             </li>
           </template>
@@ -47,10 +47,7 @@ const { current, locales } = useLocales();
 const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
 //
-const route = useRoute();
 const links = (await queryContent("navigation").findOne()).header as Link[];
-
-console.log(route.path);
 
 interface Link {
   title: string
