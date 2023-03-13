@@ -8,7 +8,7 @@ async function resetFocus() {
  * Reset the keyboard focus to the body tag on page changes.
  */
 export default function () {
-  useRouter().afterEach((from, to) => {
-    if (from.path !== to.path) { nextTick(resetFocus); }
+  useRouter().afterEach((to, from) => {
+    if (to.path == "/" || from.path !== to.path) { nextTick(resetFocus); }
   });
 }

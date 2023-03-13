@@ -3,7 +3,7 @@ title: ModpacksCH
 repo: https://github.com/Virenbar/ModpacksCH
 github: Virenbar/ModpacksCH
 ---
-Консольное приложение для загрузки модпаков с сайта modpacks.ch
+CLI утилита для загрузки модпаков из Feed the Beast и CurseForge с помощью modpacks.ch
 
 Позволяет загружать модпаки из [FTB](https://feed-the-beast.com/modpack) без установки FTB App
 

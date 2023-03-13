@@ -55,4 +55,3 @@ interface Project extends MarkdownParsedContent {
 interface Post extends MarkdownParsedContent {
   date: string
 }
-
