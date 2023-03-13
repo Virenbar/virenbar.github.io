@@ -10,6 +10,6 @@
 const props = defineProps<Props>();
 interface Props {
   title: string
-  url?: string
+  url?: string | null
 }
 </script>

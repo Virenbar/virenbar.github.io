@@ -1,24 +1,15 @@
-import { ComputedRef } from "vue";
-import { LocaleObject } from "vue-i18n-routing";
-
-let codes = <string[]>[];
-const locales = ref<string[]>([]);
-let path = "";
-
 export default function () {
   const I18n = useI18n();
   const current = I18n.locale;
-  const available = I18n.locales as ComputedRef<LocaleObject[]>;
-  codes = available.value.map(L => L.code);
-  locales.value = codes;
+  const defaults = I18n.localeCodes.value;
+  const available = ref(defaults);
 
-  const switchLocalePath = useSwitchLocalePath();
-  path = switchLocalePath("ru");
-
-  async function checkPages() {
-    path = switchLocalePath("ru");
+  async function checkLocales() {
+    const switchLocalePath = useSwitchLocalePath();
+    const path = switchLocalePath("ru");
     const contentLocales = [];
-    for (const locale of codes) {
+
+    for (const locale of defaults) {
       const query = await queryContent({
         where: [
           { _extension: "md" },
@@ -29,17 +20,17 @@ export default function () {
       if (query.length) { contentLocales.push(locale); }
     }
 
-    locales.value = contentLocales.length ? contentLocales : codes;
+    available.value = contentLocales.length ? contentLocales : defaults;
     //console.log(path.value);
     //console.log(locales);
   }
 
   const route = useRoute();
-  watch(() => route.fullPath, checkPages);
+  watch(() => route.fullPath, checkLocales);
 
   return {
     current,
-    available,
-    locales
+    defaults,
+    available
   };
 }

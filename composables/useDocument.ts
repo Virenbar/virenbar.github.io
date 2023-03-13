@@ -1,16 +1,19 @@
 import { MarkdownParsedContent, QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
 
+let locale = ref("");
+
 export default function () {
+  locale = useI18n().locale;
   return {
     getProjects,
     getProject,
+    getPostSurround,
     getPosts,
     getPost
   };
 }
 
 function getQuery(path: string | QueryBuilderWhere) {
-  const { locale } = useI18n();
   return queryContent({
     where: [
       { _locale: locale.value },
@@ -26,8 +29,20 @@ async function getProjects() {
 async function getProject() {
   try {
     const path = useSwitchLocalePath()("ru");
-    //const path = useLocalePath()(useRoute().path, "ru");
     return await getQuery(path).findOne() as Project;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function getPostSurround() {
+  try {
+    const path = useSwitchLocalePath()("ru");
+    const surround = await getQuery({ $contains: "posts" }).findSurround(path);
+    return {
+      prev: surround[0],
+      next: surround[1]
+    };
   } catch (error) {
     return null;
   }
@@ -40,6 +55,8 @@ async function getPosts() {
 async function getPost() {
   try {
     const path = useSwitchLocalePath()("ru");
+    const s = await getQuery({ $contains: "posts" }).findSurround(path);
+    console.log(s);
     return await getQuery(path).findOne() as Post;
   } catch (error) {
     return null;

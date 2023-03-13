@@ -10,24 +10,21 @@
       <ContentRenderer :value="post" />
     </div>
     <div class="card-footer">
-      <!-- TODO Fix navigation -->
-      <!-- <nav aria-label="Post navigation">
+      <nav aria-label="Post navigation">
         <div class="d-flex justify-content-between">
-          <PageButton title="Previous" />
-          <PageButton title="Next" />
+          <PageButton title="Previous" :url="prev" />
+          <PageButton title="Next" :url="next" />
         </div>
-      </nav> -->
+      </nav>
     </div>
   </div>
   <ErrorNotFound v-else />
 </template>
 <script setup lang="ts">
-const { getPost } = useDocument();
+const { getPost, getPostSurround } = useDocument();
 const post = await getPost();
-
+const s = await getPostSurround();
+const prev = s?.prev ? `..${s.prev._path}` : null;
+const next = s?.next ? `..${s.next._path}` : null;
 // setResponseStatus(404)
-//{%- assign next = site.posts | where_exp: "item", "item.lang == page.lang and item.date > page.date" | last -%}
-//{%- assign previous = site.posts | where_exp: "item", "item.lang == page.lang and item.date < page.date" | first -%}
-//{%- include page-btn.html title="Previous" url=previous.url -%}
-//{%- include page-btn.html title="Next" url=next.url -%}
 </script>

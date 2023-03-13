@@ -33,13 +33,15 @@
       </div>
       <div class="offcanvas-body">
         <ul>
-          <li>Locales: {{ locales.join(", ") }}</li>
+          <li>Locales:</li>
+          <ul>
+            <li>Defaults: {{ defaults.join(", ") }}</li>
+            <li>Available: {{ available.join(", ") }}</li>
+            <li>Current: {{ current }}</li>
+          </ul>
           <li>Language: {{ $t('language') }}({{ current }})</li>
           <li>Path(default):<br> {{ path("ru") }}</li>
           <li>Path(locale):<br> {{ $route.path }}</li>
-        </ul>
-        <ul v-for="(value, key) in items" :key="key">
-          <li>{{ key }} : {{ value }}</li>
         </ul>
       </div>
     </div>
@@ -47,12 +49,7 @@
 </template>
 
 <script setup lang="ts">
-const { current, locales } = useLocales();
+const { defaults, available, current } = useLocales();
 const date = new Date().getFullYear();
 const path = useSwitchLocalePath();
-
-const items: Record<string, string> = {
-  T1: "T1",
-  T2: "T2"
-};
 </script>
