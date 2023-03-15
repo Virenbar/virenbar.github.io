@@ -6,6 +6,7 @@
         "source.organizeImports": true
     },
     "editor.tabSize": 2,
+    "typescript.tsdk": "node_modules/typescript/lib",
     "html.format.extraLiners": "body, /html", // Conflicts with <Head/>
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar",

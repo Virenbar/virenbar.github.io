@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   ],
   content: {
     documentDriven: true,
-    locales: ["ru", "en", "es"],
+    locales: ["ru", "en", "eo"],
     defaultLocale: "ru",
     markdown: {
       anchorLinks: false
@@ -25,8 +25,8 @@ export default defineNuxtConfig({
         code: "en",
         file: "en.json"
       }, {
-        code: "es",
-        file: "es.json"
+        code: "eo",
+        file: "eo.json"
       }
     ],
     defaultLocale: "ru",

@@ -12,7 +12,7 @@ const { current } = useLocales();
 const locale = computed(() => ({
   ru: "ru_RU",
   en: "en_US",
-  es: "es_ES"
+  eo: "eo"
 })[current.value] || "ru_RU");
 
 useHead({

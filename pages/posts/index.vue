@@ -1,9 +1,7 @@
 <template>
   <div>
     <Title>{{ $t("page.blog") }}</Title>
-    <h2>
-      {{ $t("blog.title") }}
-    </h2>
+    <h3>{{ $t("blog.title") }}</h3>
     <ul>
       <template v-for="post in posts" :key="post.id">
         <li>
@@ -19,14 +17,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { MarkdownParsedContent } from "@nuxt/content/dist/runtime/types";
-
 const localePath = useLocalePath();
-const { locale } = useI18n();
-const posts = (await queryContent({
-  where: [
-    { _locale: locale.value },
-    { _path: { $contains: "posts" } }
-  ]
-}).sort({ date: -1 }).find()) as MarkdownParsedContent[];
+const { getPosts } = useDocument();
+const posts = await getPosts();
 </script>

@@ -32,5 +32,9 @@
       "title": "Page not found",
       "body": "The requested page could not be found"
     }
+  },
+  "button": {
+    "prev": "Previous",
+    "next": "Next"
   }
 }

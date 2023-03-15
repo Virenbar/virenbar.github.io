@@ -1,9 +1,7 @@
 <template>
   <div>
     <Title>{{ $t("page.projects") }}</Title>
-    <h3>
-      {{ $t("page.projects") }}
-    </h3>
+    <h3>{{ $t("page.projects") }}</h3>
     <ul>
       <template v-for="project in projects" :key="project.id">
         <li>
