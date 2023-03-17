@@ -13,27 +13,16 @@ const locale = computed(() => ({
   ru: "ru_RU",
   en: "en_US",
   eo: "eo"
-})[current.value] || "ru_RU");
+})[current.value] || current.value);
 
 useHead({
-  titleTemplate: (titleChunk: unknown) => { return titleChunk ? `${titleChunk} - @Virenbar` : "@Virenbar"; },
-  script: [
-    {
-      src: "https://kit.fontawesome.com/3d652cc361.js",
-      crossorigin: "anonymous"
-    }
-  ]
+  titleTemplate: (titleChunk: unknown) => { return titleChunk ? `${titleChunk} - @Virenbar` : "@Virenbar"; }
 });
 useSeoMeta({
   ogSiteName: "@Virenbar",
   ogType: "website",
-  ogTitle: "",
   description: "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg.",
   ogLocale: locale,
   ogUrl: computed(() => route.path)
 });
-/*
-      <Meta property="og:locale" content="{{ site.locale | replace: " -", "_" | default: "en_US" }}" />
-      <Meta property="og:url" content="{{ canonical_url }}" />
-*/
 </script>

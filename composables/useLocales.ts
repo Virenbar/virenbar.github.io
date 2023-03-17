@@ -21,16 +21,17 @@ export default function () {
     }
 
     available.value = contentLocales.length ? contentLocales : defaults;
-    //console.log(path.value);
-    //console.log(locales);
   }
 
-  const route = useRoute();
-  watch(() => route.fullPath, checkLocales);
+  // const router = useRouter();
+  // watch(router.currentRoute, checkLocales);
+  // const route = useRoute();
+  // watch(() => route.fullPath, checkLocales);
 
   return {
     current,
     defaults,
-    available
+    available,
+    checkLocales
   };
 }

@@ -23,6 +23,13 @@
   <ErrorNotFound v-else />
 </template>
 <script setup lang="ts">
+import { Project } from "~~/types";
+let project: Project;
+
 const { getProject } = useDocument();
-const project = await getProject();
+try {
+  project = await getProject();
+} catch (error) {
+  console.log(error);
+}
 </script>

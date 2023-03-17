@@ -8,6 +8,15 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/styles.scss"
   ],
+  app: {
+    head: {
+      script: [{ src: "https://kit.fontawesome.com/3d652cc361.js", crossorigin: "anonymous" }],
+      meta: [
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "@Virenbar" }
+      ]
+    }
+  },
   content: {
     documentDriven: true,
     locales: ["ru", "en", "eo"],
@@ -18,20 +27,12 @@ export default defineNuxtConfig({
   },
   i18n: {
     locales: [
-      {
-        code: "ru",
-        file: "ru.json"
-      }, {
-        code: "en",
-        file: "en.json"
-      }, {
-        code: "eo",
-        file: "eo.json"
-      }
+      { code: "ru", file: "ru.json" },
+      { code: "en", file: "en.json" },
+      { code: "eo", file: "eo.json" }
     ],
     defaultLocale: "ru",
     langDir: "locales",
-    //lazy: true,
     vueI18n: {
       legacy: false,
       locale: "ru",

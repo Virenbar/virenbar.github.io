@@ -26,11 +26,12 @@
     "@nuxtjs/i18n": "^8.0.0-beta.10",
     "@types/bootstrap": "^5.2.6",
     "eslint": "^8.35.0",
-    "nuxt": "^3.2.3",
-    "sass": "^1.58.3",
+    "nuxt": "^3.3.1",
+    "sass": "^1.59.3",
     "sass-loader": "^13.2.0",
     "sitemap": "^7.1.1",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "webpack": "^5.76.2"
   },
   "private": true
 }

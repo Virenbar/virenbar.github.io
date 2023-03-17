@@ -7,11 +7,6 @@
     <div class="card-body">
       <ContentRenderer :value="post" />
     </div>
-    <!-- <div class="card-body">
-      <ContentDoc v-slot="{ P }" :query="{ where: [{ _locale: locale }], path: path }">
-        <ContentRenderer :value="P" />
-      </ContentDoc>
-    </div> -->
     <div class="card-footer">
       <nav aria-label="Post navigation">
         <div class="d-flex justify-content-between">
@@ -24,14 +19,21 @@
   <ErrorNotFound v-else />
 </template>
 <script setup lang="ts">
-//const switchLocalePath = useSwitchLocalePath();
-//const path = switchLocalePath("ru");
-//const locale = useLocales().current;
+import { Nullable, Post } from "~~/types";
+let post: Nullable<Post>;
+let pathP: Nullable<string>;
+let pathN: Nullable<string>;
 
 const { getPost, getPostSurround } = useDocument();
-const post = await getPost();
+try {
+  post = await getPost();
+  useContentHead(post);
 
-const { prev, next } = await getPostSurround();
-const pathP = prev ? `..${prev._path}` : null;
-const pathN = next ? `..${next._path}` : null;
+  const { prev, next } = await getPostSurround();
+  pathP = prev ? `..${prev._path}` : null;
+  pathN = next ? `..${next._path}` : null;
+
+} catch (error) {
+  console.log(error);
+}
 </script>

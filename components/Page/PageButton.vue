@@ -1,8 +1,8 @@
 <template>
-  <NuxtLink v-if="props.url" class="btn bg-info" :to="props.url">
+  <NuxtLink v-if="props.url" class="btn btn-primary" :to="props.url">
     {{ props.title }}
   </NuxtLink>
-  <NuxtLink v-else aria-disabled="true" class="btn bg-info disabled" tabindex="-1">
+  <NuxtLink v-else aria-disabled="true" class="btn btn-primary disabled" tabindex="-1">
     {{ props.title }}
   </NuxtLink>
 </template>

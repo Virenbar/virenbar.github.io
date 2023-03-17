@@ -28,12 +28,8 @@ async function getProjects() {
   return await getQuery({ $contains: "projects" }).find() as Project[];
 }
 
-async function getProject() {
-  try {
-    return await getQuery(path).findOne() as Project;
-  } catch (error) {
-    return null;
-  }
+function getProject() {
+  return getQuery(path).findOne() as Promise<Project>;
 }
 
 async function getPostSurround() {
@@ -55,13 +51,8 @@ async function getPosts() {
   return await getQuery({ $contains: "posts" }).sort({ date: -1 }).find() as Post[];
 }
 
-async function getPost() {
-  try {
-    return <Post | null>await getQuery(path).findOne();
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
+function getPost() {
+  return getQuery(path).findOne() as Promise<Post>;
 }
 
 // type Document = Omit<MarkdownParsedContent, "_locale"> & { _locale?: string }
