@@ -1,6 +1,6 @@
 ---
 title: ModpacksCH
-repo: https://github.com/Virenbar/ModpacksCH
+source: https://github.com/Virenbar/ModpacksCH
 github: Virenbar/ModpacksCH
 ---
 CLI утилита для загрузки модпаков из Feed the Beast и CurseForge с помощью modpacks.ch

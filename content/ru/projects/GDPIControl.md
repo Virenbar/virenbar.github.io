@@ -1,6 +1,6 @@
 ---
 title: GDPIControl
-repo: https://github.com/Virenbar/GDPIControl
+source: https://github.com/Virenbar/GDPIControl
 github: Virenbar/GDPIControl
 ---
 Небольшое приложение для управления GoodbyeDPI из трея

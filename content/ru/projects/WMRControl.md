@@ -1,9 +1,12 @@
 ---
 title: WMRControl
-repo: https://github.com/Virenbar/WMRControl
+source: https://github.com/Virenbar/WMRControl
 github: Virenbar/WMRControl
 ---
-A small application to manage the state of a WMR device
+Небольшое приложение для управления состоянием WMR устройства.
+
+При загрузке Windows Samsung Odyssey+ постоянно самостоятельно включается.  
+Мне неудобно отключать его от ПК, поэтому я нашёл способ делать это программно, и создал данное приложение.
 
 #### Скриншоты
 

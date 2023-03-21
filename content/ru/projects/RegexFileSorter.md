@@ -1,6 +1,6 @@
 ---
 title: RegexFileSorter
-repo: https://github.com/Virenbar/RegexFileSorter
+source: https://github.com/Virenbar/RegexFileSorter
 github: Virenbar/RegexFileSorter
 ---
 Приложение для сортировки файлов с помощью регулярных выражений

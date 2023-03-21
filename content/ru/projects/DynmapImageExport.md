@@ -1,6 +1,6 @@
 ---
 title: Dynmap Image Export
-repo: https://github.com/Virenbar/DynmapImageExport
+source: https://github.com/Virenbar/DynmapImageExport
 github: Virenbar/DynmapImageExport
 ---
 CLI утилита для загрузки тайлов с HTTP-сервера Dynmap и объединения их в одно изображение.

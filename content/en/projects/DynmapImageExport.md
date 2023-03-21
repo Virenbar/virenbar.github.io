@@ -1,6 +1,6 @@
 ---
 title: Dynmap Image Export
-repo: https://github.com/Virenbar/DynmapImageExport
+source: https://github.com/Virenbar/DynmapImageExport
 github: Virenbar/DynmapImageExport
 ---
 CLI tool for downloading tiles from Dynmap HTTP server and merging them into one image.

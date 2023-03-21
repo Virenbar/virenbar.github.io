@@ -16,7 +16,7 @@
     </div>
     <div class="d-none d-md-block">
       This
-      <a href="https://github.com/Virenbar/virenbar.github.io">site</a>
+      <a href="https://github.com/Virenbar/virenbar.github.io">website</a>
       made using
       <a href="https://nuxt.com/">
         <i class="fa-solid fa-mountain" />

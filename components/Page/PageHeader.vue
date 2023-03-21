@@ -43,23 +43,12 @@
   </header>
 </template>
 <script setup lang="ts">
-const { current, available, checkLocales } = useLocales();
-checkLocales();
-
-// const route = useRoute();
-// watch(() => route.fullPath, checkLocales);
-const route = useRoute();
-watch(() => route.fullPath, checkLocales);
+import { Navigation } from "~~/types";
 
 const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
 // Header links
-const links = (await queryContent("navigation").findOne()).header as Link[];
-
-interface Link {
-  title: string
-  url: string
-  id: string
-}
-
+const navigation = await queryContent("navigation").findOne() as Navigation;
+const links = navigation.header;
+const { current, available } = useLocales();
 </script>

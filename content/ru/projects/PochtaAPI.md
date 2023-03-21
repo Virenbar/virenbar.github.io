@@ -1,6 +1,6 @@
 ---
 title: PochtaAPI
-repo: https://github.com/Virenbar/PochtaAPI
+source: https://github.com/Virenbar/PochtaAPI
 github: Virenbar/PochtaAPI
 ---
 Библиотека для работы с [API Почты России](https://www.pochta.ru/support/business/api)

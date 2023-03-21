@@ -1,4 +1,5 @@
-import { MarkdownParsedContent, ParsedContent, QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
+import { ParsedContent, QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
+import { Post, Project } from "~~/types";
 
 let path: string;
 let locale: string;
@@ -53,14 +54,4 @@ async function getPosts() {
 
 function getPost() {
   return getQuery(path).findOne() as Promise<Post>;
-}
-
-// type Document = Omit<MarkdownParsedContent, "_locale"> & { _locale?: string }
-
-interface Project extends MarkdownParsedContent {
-  repo?: string
-  github?: string
-}
-interface Post extends MarkdownParsedContent {
-  date: string
 }

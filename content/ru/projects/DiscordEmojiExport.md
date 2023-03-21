@@ -1,6 +1,6 @@
 ---
 title: Discord Emoji Export
-repo: https://github.com/Virenbar/discord-emoji-export
+source: https://github.com/Virenbar/discord-emoji-export
 github: Virenbar/discord-emoji-export
 ---
 [Сайт](https://virenbar.github.io/discord-emoji-export/) для экспорта эмодзи и стикеров с любого сервера discord, в котором вы находитесь.

@@ -1,6 +1,6 @@
 ---
 title: FIAS GAR
-repo: https://github.com/Virenbar/FIAS_GAR
+source: https://github.com/Virenbar/FIAS_GAR
 github: Virenbar/FIAS_GAR
 ---
 

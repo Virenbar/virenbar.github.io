@@ -20,9 +20,9 @@
 </template>
 <script setup lang="ts">
 import { Nullable, Post } from "~~/types";
+
 let post: Nullable<Post>;
-let pathP: Nullable<string>;
-let pathN: Nullable<string>;
+let pathP: Nullable<string>, pathN: Nullable<string>;
 
 const { getPost, getPostSurround } = useDocument();
 try {
@@ -32,7 +32,6 @@ try {
   const { prev, next } = await getPostSurround();
   pathP = prev ? `..${prev._path}` : null;
   pathN = next ? `..${next._path}` : null;
-
 } catch (error) {
   console.log(error);
 }

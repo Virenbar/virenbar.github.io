@@ -1,12 +1,12 @@
 <template>
   <div v-if="project" class="card">
-    <Title>{{ project.title }}</Title>
     <div class="card-header d-flex justify-content-between">
       <h4>{{ project.title }}</h4>
       <a v-if="project.github" target="_blank" :href="`https://github.com/${project.github}`">
-        <h4>
-          <i class="fa-brands fa-github" />
-        </h4>
+        <i class="fa-brands fa-github fa-xl" />
+      </a>
+      <a v-else-if="project.source" target="_blank" :href="project.source">
+        <i class="fa-solid fa-code fa-xl" />
       </a>
     </div>
     <div class="card-body">
@@ -23,12 +23,13 @@
   <ErrorNotFound v-else />
 </template>
 <script setup lang="ts">
-import { Project } from "~~/types";
-let project: Project;
+import { Nullable, Project } from "~~/types";
+let project: Nullable<Project>;
 
 const { getProject } = useDocument();
 try {
   project = await getProject();
+  useContentHead(project);
 } catch (error) {
   console.log(error);
 }

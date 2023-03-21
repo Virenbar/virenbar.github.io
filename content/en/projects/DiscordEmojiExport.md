@@ -1,6 +1,6 @@
 ---
 title: Discord Emoji Export
-repo: https://github.com/Virenbar/discord-emoji-export
+source: https://github.com/Virenbar/discord-emoji-export
 github: Virenbar/discord-emoji-export
 ---
 [Website](https://virenbar.github.io/discord-emoji-export/) for exporting emojis and stickers from any discord server you are in.
