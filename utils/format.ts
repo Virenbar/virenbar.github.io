@@ -1,13 +1,4 @@
-export default defineNuxtPlugin(() => {
-  return {
-    provide: {
-      formatDateTime,
-      formatISODate
-    }
-  };
-});
-
-function formatDateTime(date: Date) {
+export function formatDateTime(date: Date) {
   const year = date.getFullYear();
   const month = formatNumber(date.getMonth());
   const day = formatNumber(date.getDate());
@@ -17,7 +8,7 @@ function formatDateTime(date: Date) {
   return `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
 }
 
-function formatISODate(isodate: string) {
+export function formatISODate(isodate: string) {
   const date = new Date(isodate);
   const year = date.getFullYear();
   const month = formatNumber(date.getMonth() + 1);//WTF C -> Java -> JS

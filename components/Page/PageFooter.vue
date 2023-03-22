@@ -42,6 +42,7 @@
           <li>Language: {{ $t('language') }}({{ current }})</li>
           <li>Path(default):<br> {{ path("ru") }}</li>
           <li>Path(locale):<br> {{ $route.path }}</li>
+          <li>Lanyard: {{ lanyard }}</li>
         </ul>
       </div>
     </div>
@@ -52,4 +53,5 @@
 const { defaults, available, current } = useLocales();
 const date = new Date().getFullYear();
 const path = useSwitchLocalePath();
+const lanyard = useLanyard();
 </script>

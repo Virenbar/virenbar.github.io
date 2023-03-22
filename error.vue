@@ -5,25 +5,17 @@
     <main id="main" class="flex-grow-1 flex-shrink-0">
       <div class="scanlines" />
       <div class="container p-3">
-        <h3>Error</h3>
-        <div>
-          <ul>
-            <li v-for="(value, key) in props.error" :key="key">
-              {{ key }}: {{ value }}
-            </li>
-          </ul>
-        </div>
-        <button class="btn btn-warning" @click="handleError">
-          Clear errors
-        </button>
+        <ErrorNotFound v-if="statusCode == 404" />
+        <ErrorCommon v-else :error="props.error" />
       </div>
     </main>
     <PageFooter />
   </div>
 </template>
 <script setup lang="ts">
+
 const props = defineProps<Props>();
-const handleError = () => clearError({ redirect: "/" });
+const statusCode = computed(() => "statusCode" in props.error ? props.error.statusCode : undefined);
 
 interface Props {
   error: Object

@@ -27,7 +27,6 @@
             {{ $t("language") }}
             {{ }}
           </button>
-
           <ul class="dropdown-menu dropdown-menu-dark" style="width:100%; min-width: 100%;">
             <template v-for="locale in available" :key="locale">
               <li>
@@ -47,7 +46,7 @@ import { Navigation } from "~~/types";
 
 const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
-// Header links
+// Header links 
 const navigation = await queryContent("navigation").findOne() as Navigation;
 const links = navigation.header;
 const { current, available } = useLocales();

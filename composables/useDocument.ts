@@ -1,5 +1,5 @@
-import { ParsedContent, QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
-import { Post, Project } from "~~/types";
+import { QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
+import { Navigation, Post, Project } from "~~/types";
 
 let path: string;
 let locale: string;
@@ -8,6 +8,7 @@ export default function () {
   path = useSwitchLocalePath()("ru");
   locale = useI18n().locale.value;
   return {
+    getNavigation,
     getProjects,
     getProject,
     getPostSurround,
@@ -25,6 +26,10 @@ function getQuery(path: string | QueryBuilderWhere) {
   });
 }
 
+async function getNavigation() {
+  return await queryContent("navigation").findOne() as Navigation;
+}
+
 async function getProjects() {
   return await getQuery({ $contains: "projects" }).find() as Project[];
 }
@@ -34,18 +39,11 @@ function getProject() {
 }
 
 async function getPostSurround() {
-  try {
-    const surround = await getQuery({ $contains: "posts" }).findSurround(path);
-    return {
-      prev: <ParsedContent | null>surround[0],
-      next: <ParsedContent | null>surround[1]
-    };
-  } catch (error) {
-    return {
-      prev: null,
-      next: null
-    };
-  }
+  const surround = await getQuery({ $contains: "posts" }).findSurround(path);
+  return {
+    prev: <Post | null>surround[0] ?? null,
+    next: <Post | null>surround[1] ?? null
+  };
 }
 
 async function getPosts() {

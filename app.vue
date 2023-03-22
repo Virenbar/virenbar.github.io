@@ -2,12 +2,19 @@
   <PageFavicon />
   <div class="min-vh-100 d-flex flex-column">
     <PageHeader />
-    <Main />
+    <main id="main" class="flex-grow-1 flex-shrink-0">
+      <div class="scanlines" />
+      <div class="scanline" />
+      <div class="container p-3">
+        <NuxtPage />
+      </div>
+    </main>
     <PageFooter />
   </div>
 </template>
 <script setup lang="ts">
-const route = useRoute();
+useFocusReset();
+//const route = useRoute();
 const { current } = useLocales();
 const locale = computed(() => ({
   ru: "ru_RU",
@@ -23,6 +30,6 @@ useSeoMeta({
   ogType: "website",
   description: "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg.",
   ogLocale: locale,
-  ogUrl: computed(() => route.path)
+  ogUrl: computed(() => useRoute().path)
 });
 </script>
