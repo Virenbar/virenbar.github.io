@@ -1,32 +1,51 @@
-
-export interface LanyardEvent {
+/**
+ * Event
+ */
+export interface OP0 {
   op: 0,
   t: "INIT_STATE" | "PRESENCE_UPDATE",
   d: LanyardPresence
 }
-
-export interface LanyardHello {
+/**
+ * Hello
+ */
+export interface OP1 {
   op: 1,
   d: { "heartbeat_interval": number }
 }
-
-export interface LanyardInitialize {
+/**
+ * Initialize
+ */
+export interface OP2 {
   op: 2,
   d: { "subscribe_to_id": string }
 }
-
-export interface LanyardHeartbeat {
+/**
+ * Heartbeat
+ */
+export interface OP3 {
   op: 3
 }
 
-export type LanyardData = LanyardEvent | LanyardHello | LanyardInitialize | LanyardHeartbeat
+/**
+ * Lanyard websocket message
+ */
+export type LanyardMessage = OP0 | OP1 | OP2 | OP3
 
+/**
+ * User status
+ */
+export type DiscordStatus = "online" | "idle" | "dnd" | "offline";
+
+/**
+ * Discord presence data
+ */
 export interface LanyardPresence {
   active_on_discord_desktop: boolean;
   active_on_discord_mobile: boolean;
   active_on_discord_web: boolean;
   activities: Activity[];
-  discord_status: "online" | "idle" | "dnd" | "offline";
+  discord_status: DiscordStatus;
   discord_user: DiscordUser;
   kv: Record<string, string>;
   listening_to_spotify: boolean;
@@ -82,7 +101,3 @@ export interface DiscordUser {
   discriminator: string;
   avatar: string | null;
 }
-
-export type DiscordStatus = Pick<LanyardPresence, "discord_status">["discord_status"];
-export type DiscordActivity = Pick<LanyardPresence, "activities">["activities"][number];
-export type DiscordSpotify = Pick<LanyardPresence, "spotify">["spotify"];

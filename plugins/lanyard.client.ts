@@ -1,40 +1,27 @@
-import { useWebSocket } from "@vueuse/core";
-import { LanyardData, LanyardHeartbeat, LanyardInitialize, LanyardPresence } from "~/types/lanyard";
+import { LanyardMessage, LanyardPresence } from "~/types/lanyard";
 
-const Socket = "wss://api.lanyard.rest/socket";
-const ID = "132479201470185472";
+const websocketURL = "wss://api.lanyard.rest/socket";
+const userID = "132479201470185472";
+const subscribe: LanyardMessage = { op: 2, d: { subscribe_to_id: userID } };
+const heartbeat: LanyardMessage = { op: 3 };
 
 export default defineNuxtPlugin(() => {
   const lanyard = ref<LanyardPresence | null>(null);
-  const heartbeat = JSON.stringify(<LanyardHeartbeat>{ op: 3 });
-  const subscribe = JSON.stringify(<LanyardInitialize>{ op: 2, d: { subscribe_to_id: ID } });
   let interval = 30_000;
 
-  function onMessage(ws: WebSocket, message: MessageEvent) {
-    const L = JSON.parse(message.data) as LanyardData;
+  const WS = new WebSocket(websocketURL);
+  WS.onmessage = (event) => {
+    const L = <LanyardMessage>JSON.parse(event.data);
 
-    switch (L.op) {
-      case 0:
-        lanyard.value = L.d || ({} as LanyardPresence);
-        break;
-      case 1:
-        interval = L.d.heartbeat_interval;
-        ws.send(subscribe);
-        break;
-
-      default:
-        break;
+    if (L.op == 0) {
+      lanyard.value = L.d;
+    } else if (L.op == 1) {
+      interval = L.d.heartbeat_interval;
+      WS.send(JSON.stringify(subscribe));
     }
-  }
-  //TODO heartbeat is broken
-  useWebSocket(Socket, {
-    heartbeat: {
-      message: heartbeat,
-      interval: interval,
-      pongTimeout: Number.POSITIVE_INFINITY
-    },
-    onMessage
-  });
+  };
+
+  setInterval(() => { WS.send(JSON.stringify(heartbeat)); }, interval);
 
   return {
     provide: {

@@ -42,13 +42,13 @@
           <li>Language: {{ $t('language') }}({{ current }})</li>
           <li>Path(default):<br> {{ path("ru") }}</li>
           <li>Path(locale):<br> {{ $route.path }}</li>
-          <li>Lanyard: {{ lanyard }}</li>
+          <li>Status: {{ lanyard?.discord_status }}</li>
+          <li>Activity: {{ lanyard?.activities[0]?.name }}</li>
         </ul>
       </div>
     </div>
   </footer>
 </template>
-
 <script setup lang="ts">
 const { defaults, available, current } = useLocales();
 const date = new Date().getFullYear();
