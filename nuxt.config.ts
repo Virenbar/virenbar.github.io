@@ -1,9 +1,5 @@
 export default defineNuxtConfig({
   ssr: true,
-  modules: [
-    "@nuxt/content",
-    "@nuxtjs/i18n"
-  ],
   css: [
     "~/assets/css/styles.scss"
   ],
@@ -16,6 +12,10 @@ export default defineNuxtConfig({
       ]
     }
   },
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/i18n"
+  ],
   content: {
     documentDriven: true,
     locales: ["ru", "en", "eo"],
@@ -41,6 +41,12 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ["/sitemap.xml"]
+    }
+  },
+  runtimeConfig: {
+    public: {
+      json: "",
+      storage: ""
     }
   }
 });

@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const { defaults, available, current } = useLocales();
+const date = new Date().getFullYear();
+const path = useSwitchLocalePath();
+const lanyard = useLanyard();
+</script>
 <template>
   <footer class="container-fluid py-1 px-3 bg-secondary d-flex justify-content-between align-items-center">
     <div class="d-none d-md-block">
@@ -49,9 +55,4 @@
     </div>
   </footer>
 </template>
-<script setup lang="ts">
-const { defaults, available, current } = useLocales();
-const date = new Date().getFullYear();
-const path = useSwitchLocalePath();
-const lanyard = useLanyard();
-</script>
+

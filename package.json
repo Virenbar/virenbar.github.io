@@ -16,22 +16,22 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
+    "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.3",
     "bootswatch": "^5.2.3"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.5.2",
+    "@nuxt/content": "^2.6.0",
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxtjs/i18n": "^8.0.0-beta.10",
     "@types/bootstrap": "^5.2.6",
-    "eslint": "^8.36.0",
-    "nuxt": "^3.3.1",
-    "sass": "^1.59.3",
-    "sass-loader": "^13.2.1",
+    "eslint": "^8.39.0",
+    "nuxt": "^3.4.2",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.2",
     "sitemap": "^7.1.1",
     "typescript": "^4.9.5",
-    "webpack": "^5.76.3"
+    "webpack": "^5.80.0"
   },
   "private": true
 }
