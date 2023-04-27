@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const { path, getItems } = useStorage();
-const items = await getItems();
+const { path, items } = useStorage();
 </script>
 <template>
   <div>
