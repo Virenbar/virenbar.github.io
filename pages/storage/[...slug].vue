@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: "mini"
+});
 const { path, items } = useStorage();
 </script>
 <template>

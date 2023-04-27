@@ -51,6 +51,9 @@ const lanyard = useLanyard();
           <li>Status: {{ lanyard?.discord_status }}</li>
           <li>Activity: {{ lanyard?.activities[0]?.name }}</li>
         </ul>
+        <NuxtLink to="/storage/">
+          Storage
+        </NuxtLink>
       </div>
     </div>
   </footer>

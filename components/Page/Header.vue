@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { Navigation } from "~~/types";
+
+const localePath = useLocalePath();
+const switchLocalePath = useSwitchLocalePath();
+// Header links 
+const navigation = await queryContent("navigation").findOne() as Navigation;
+const links = navigation.header;
+const { current, available } = useLocales();
+</script>
 <template>
   <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
     <nav class="container font-monospace">
@@ -41,13 +51,3 @@
     </nav>
   </header>
 </template>
-<script setup lang="ts">
-import { Navigation } from "~~/types";
-
-const localePath = useLocalePath();
-const switchLocalePath = useSwitchLocalePath();
-// Header links 
-const navigation = await queryContent("navigation").findOne() as Navigation;
-const links = navigation.header;
-const { current, available } = useLocales();
-</script>
