@@ -14,7 +14,8 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxt/content",
-    "@nuxtjs/i18n"
+    "@nuxtjs/i18n",
+    "@virenbar/nuxt-lanyard"
   ],
   content: {
     documentDriven: true,

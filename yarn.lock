@@ -950,6 +950,30 @@
     unimport "^3.0.2"
     untyped "^1.2.2"
 
+"@nuxt/kit@^3.4.2":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.4.3.tgz#2ab6efb0a4db7b4e5f4d8d7d7e696fa30a6e8771"
+  integrity sha512-aQyzplYFCL292UsVZzlOZOC51ZKYFL0PBihbcPzxTzXQvAfMF8/DQ539kqzqXzxTCcmnUB9ROhIaNUrAeUkFYA==
+  dependencies:
+    "@nuxt/schema" "3.4.3"
+    c12 "^1.4.1"
+    consola "^3.1.0"
+    defu "^6.1.2"
+    globby "^13.1.4"
+    hash-sum "^2.0.0"
+    ignore "^5.2.4"
+    jiti "^1.18.2"
+    knitwork "^1.0.0"
+    lodash.template "^4.5.0"
+    mlly "^1.2.0"
+    pathe "^1.1.0"
+    pkg-types "^1.0.2"
+    scule "^1.0.0"
+    semver "^7.5.0"
+    unctx "^2.3.0"
+    unimport "^3.0.6"
+    untyped "^1.3.2"
+
 "@nuxt/schema@3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.3.1.tgz#305d0db9c535f64fad3aa1a7c985410e733f9ff0"
@@ -992,6 +1016,21 @@
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.4.2.tgz#1cdafdc3246027bb9964c2ccb172003213c4d989"
   integrity sha512-DXB/fyjrAssFt9KGXyS+ZSfm1A0NYKhEoc01wyz1lGo//oETzUh3MmwE6X3x65NPqDlYZ6Mnj+IdftRRophv5Q==
+  dependencies:
+    defu "^6.1.2"
+    hookable "^5.5.3"
+    pathe "^1.1.0"
+    pkg-types "^1.0.2"
+    postcss-import-resolver "^2.0.0"
+    std-env "^3.3.2"
+    ufo "^1.1.1"
+    unimport "^3.0.6"
+    untyped "^1.3.2"
+
+"@nuxt/schema@3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.4.3.tgz#106548003b7bbc40428b2af290b31b1e89acffc5"
+  integrity sha512-8bv0/mRDw6THQguSz+cKG5FzDZc2XBkjcc5VZ7yET84r4aWzW9/R274cjlEagFKrw9BDaPEQhnkwpg+kZnpOUA==
   dependencies:
     defu "^6.1.2"
     hookable "^5.5.3"
@@ -1447,6 +1486,14 @@
     micromatch "^4.0.2"
     node-gyp-build "^4.2.2"
     resolve-from "^5.0.0"
+
+"@virenbar/nuxt-lanyard@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@virenbar/nuxt-lanyard/-/nuxt-lanyard-1.0.2.tgz#55b9f0d7c02e19238581b1bfabe29be10e6cc61d"
+  integrity sha512-kOzJ+l9KimifI6N4zQuDCIT5RoTrCAhwIX+M7TODkMfWzk4UKeXFY3+1/63qZXqhc4VDEGenrlVzF/SDd1TttQ==
+  dependencies:
+    "@nuxt/kit" "^3.4.2"
+    defu "^6.1.2"
 
 "@vitejs/plugin-vue-jsx@^3.0.1":
   version "3.0.1"

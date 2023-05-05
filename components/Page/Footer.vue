@@ -2,7 +2,7 @@
 const { defaults, available, current } = useLocales();
 const date = new Date().getFullYear();
 const path = useSwitchLocalePath();
-const lanyard = useLanyard();
+const L = useLanyard({ method: "ws", id: "132479201470185472" });
 </script>
 <template>
   <footer class="container-fluid py-1 px-3 bg-secondary d-flex justify-content-between align-items-center">
@@ -48,8 +48,10 @@ const lanyard = useLanyard();
           <li>Language: {{ $t('language') }}({{ current }})</li>
           <li>Path(default):<br> {{ path("ru") }}</li>
           <li>Path(locale):<br> {{ $route.path }}</li>
-          <li>Status: {{ lanyard?.discord_status }}</li>
-          <li>Activity: {{ lanyard?.activities[0]?.name }}</li>
+          <template v-if="L">
+            <li>Status: {{ L?.discord_status }}</li>
+            <li>Activity: {{ L?.activities[0]?.name }}</li>
+          </template>
         </ul>
         <NuxtLink to="/storage/">
           Storage
