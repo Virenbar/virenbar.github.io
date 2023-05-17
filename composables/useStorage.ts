@@ -1,13 +1,12 @@
 export default function () {
   const config = useRuntimeConfig().public;
-  const path = useState<string>("/");
+  const path = useState<string>("path", () => "/");
   const items = useState<StorageItem[]>();
 
   const getPath = () => path.value;
 
-  const getItems = async (path?: string) => {
-    path = path ?? getPath();
-    const url = `${config.json}${path}`;
+  const getItems = async (path: string) => {
+    const url = `${config.json}/${path}`;
     const { data, error } = await useFetch<StorageJSON[]>(url);
     if (!data.value || error.value) { return []; }
 
@@ -16,18 +15,14 @@ export default function () {
       type: I.type,
       mtime: new Date(I.mtime),
       size: I.size,
-      url: `${config.storage}${path}${I.name}`
+      url: I.type == "file" ? `${config.storage}${path}${I.name}` : `?path=/${I.name}/`
     }));
   };
 
   watchEffect(async () => {
-    let slug = useRoute().params.slug;
-    if (Array.isArray(slug)) { slug = slug.join("/"); }
-    if (!slug.startsWith("/")) { slug = `/${slug}`; }
-    if (!slug.endsWith("/")) { slug = `${slug}/`; }
-
-    path.value = slug;
-    items.value = await getItems(slug);
+    const query = useRoute().query;
+    path.value = typeof query["path"] == "string" ? query["path"] : "/";
+    items.value = await getItems(path.value);
   });
 
   return {

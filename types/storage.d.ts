@@ -10,3 +10,9 @@ type StorageItem = Omit<StorageJSON, "mtime"> & {
   mtime: Date
   url: string
 }
+
+interface Crumb {
+  name: string
+  url: string
+  active: boolean
+}

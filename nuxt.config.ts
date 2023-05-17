@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-  ssr: true,
   css: [
     "~/assets/css/styles.scss"
   ],
@@ -32,12 +31,7 @@ export default defineNuxtConfig({
       { code: "eo", file: "eo.json" }
     ],
     defaultLocale: "ru",
-    langDir: "locales",
-    vueI18n: {
-      legacy: false,
-      locale: "ru",
-      fallbackLocale: "en"
-    }
+    langDir: "locales"
   },
   nitro: {
     prerender: {

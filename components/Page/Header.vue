@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { Navigation } from "~~/types";
-
 const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
+
 // Header links 
-const navigation = await queryContent("navigation").findOne() as Navigation;
+const navigation = await useDocument().getNavigation();
 const links = navigation.header;
 const { current, available } = useLocales();
+const { mini } = usePath();
+
 </script>
 <template>
   <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
     <nav class="container font-monospace">
-      <NuxtLink class="navbar-brand mx-auto" :to="localePath('/')">
+      <NuxtLink class="navbar-brand" :class="{ 'mx-auto': !mini }" :to="localePath('/')">
         <img alt="" class="d-inline-block align-top rounded-circle" height="32" src="https://gravatar.com/avatar/e405f42d63f70e88dec627087aec4318" width="32">
         {{}}
         <Gradient text="@Virenbar" />
@@ -20,7 +21,7 @@ const { current, available } = useLocales();
         <i class="bi bi-three-dots" />
       </button>
 
-      <div id="navbar" class="collapse navbar-collapse">
+      <div v-if="!mini" id="navbar" class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <template v-for="link in links" :key="link.url">
             <li class="nav-item" :class="{ current: localePath($route.path, 'ru').endsWith(link.url) }">

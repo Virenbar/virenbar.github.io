@@ -25,7 +25,7 @@ const fileStats = `${fileCount} file${fileCount == 1 ? "" : "s"}`;
         <tr v-for="item in props.items" :key="item.name">
           <td>
             <a v-if="item.type == 'file'" class="link-icon" target="_blank" :href="item.url">{{ item.name }}</a>
-            <NuxtLink v-else class="link-icon" :to="item.name + '/'">
+            <NuxtLink v-else class="link-icon" :to="item.url">
               {{ item.name }}/
             </NuxtLink>
           </td>
