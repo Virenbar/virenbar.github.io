@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     "@virenbar/nuxt-lanyard"
   ],
   content: {
-    documentDriven: true,
+    documentDriven: false,
     locales: ["ru", "en", "eo"],
     defaultLocale: "ru",
     markdown: {
