@@ -5,12 +5,13 @@
     "home": "Главная",
     "projects": "Проекты",
     "hardware": "Железо",
-    "blog": "Блог"
+    "blog": "Блог",
+    "status": "Статус"
   },
   "home": {
     "P1": "Привет, я Virenbar и это мой персональный сайт.",
     "P2": "Я .NET(C#,VB) и TypeScript разработчик.",
-    "discord": "Virenbar#4236 в"
+    "discord": "virenbar в"
   },
   "blog": {
     "title": "Последние записи"
@@ -25,7 +26,8 @@
     "gpu": "Видеокарта",
     "storage": "Хранилище",
     "os": "ОС",
-    "monitor": "Монитор"
+    "monitor": "Монитор",
+    "other": "Другое"
   },
   "error": {
     "page-not-found": {

@@ -6,7 +6,7 @@ export default function () {
   const getPath = () => path.value;
 
   const getItems = async (path: string) => {
-    const url = `${config.json}/${path}`;
+    const url = `${config.storage_json}/${path}`;
     const { data, error } = await useFetch<StorageJSON[]>(url);
     if (!data.value || error.value) { return []; }
 
@@ -15,7 +15,7 @@ export default function () {
       type: I.type,
       mtime: new Date(I.mtime),
       size: I.size,
-      url: I.type == "file" ? `${config.storage}${path}${I.name}` : `?path=/${I.name}/`
+      url: I.type == "file" ? `${config.storage_endpoint}${path}${I.name}` : `?path=/${I.name}/`
     }));
   };
 

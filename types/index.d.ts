@@ -11,8 +11,10 @@ export interface Project extends MarkdownParsedContent {
   github?: string
 }
 
-export interface Navigation extends ParsedContent {
-  header: Link[]
+export interface Hardware extends ParsedContent {
+  pc: Record<string, string[]>
+  server: Record<string, string[]>
+  server_ha: Record<string, string[]>
 }
 
 interface Link {

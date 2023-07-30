@@ -5,12 +5,13 @@
     "home": "Home",
     "projects": "Projects",
     "hardware": "Hardware",
-    "blog": "Blog"
+    "blog": "Blog",
+    "status": "Status"
   },
   "home": {
     "P1": "Hi, i'm Virenbar and this is my personal site.",
     "P2": "I'm a .NET(C#,VB) and TypeScript developer.",
-    "discord": "Virenbar#4236 on"
+    "discord": "virenbar on"
   },
   "blog": {
     "title": "Latest Posts"
@@ -25,7 +26,8 @@
     "gpu": "Graphics card",
     "storage": "Storage",
     "os": "OS",
-    "monitor": "Monitor"
+    "monitor": "Monitor",
+    "other": "Other"
   },
   "error": {
     "page-not-found": {

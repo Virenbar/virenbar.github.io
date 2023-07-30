@@ -19,6 +19,11 @@
     font-variant-ligatures: none;
 }
 
+html {
+    overflow-y: scroll;
+    //scrollbar-gutter: stable;
+}
+
 main {
     position: relative;
 }

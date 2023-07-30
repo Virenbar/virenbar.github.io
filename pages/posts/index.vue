@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const localePath = useLocalePath();
+const { getPosts } = useDocument();
+const posts = await getPosts();
+</script>
 <template>
   <div>
     <Title>{{ $t("page.blog") }}</Title>
@@ -16,8 +21,3 @@
     </ul>
   </div>
 </template>
-<script setup lang="ts">
-const localePath = useLocalePath();
-const { getPosts } = useDocument();
-const posts = await getPosts();
-</script>

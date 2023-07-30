@@ -1,31 +1,30 @@
 <script setup lang="ts">
 const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
-
-// Header links 
-const navigation = await useDocument().getNavigation();
-const links = navigation.header;
 const { current, available } = useLocales();
-const { mini } = usePath();
-
+const { mini, header: links } = usePath();
 </script>
 <template>
   <header class="navbar navbar-expand-lg navbar-dark bg-dark px-3 sticky-top">
     <nav class="container font-monospace">
       <NuxtLink class="navbar-brand" :class="{ 'mx-auto': !mini }" :to="localePath('/')">
-        <img alt="" class="d-inline-block align-top rounded-circle" height="32" src="https://gravatar.com/avatar/e405f42d63f70e88dec627087aec4318" width="32">
+        <img
+          alt="" class="d-inline-block align-top rounded-circle" height="32" src="https://gravatar.com/avatar/e405f42d63f70e88dec627087aec4318"
+          width="32">
         {{}}
         <Gradient text="@Virenbar" />
       </NuxtLink>
-      <button aria-controls="global-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#global-navbar" data-bs-toggle="collapse" type="button">
+      <button
+        aria-controls="global-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#global-navbar"
+        data-bs-toggle="collapse" type="button">
         <i class="bi bi-three-dots" />
       </button>
 
       <div v-if="!mini" id="navbar" class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
-          <template v-for="link in links" :key="link.url">
-            <li class="nav-item" :class="{ current: localePath($route.path, 'ru').endsWith(link.url) }">
-              <NuxtLink class="nav-link" :to="localePath(link.url)">
+          <template v-for="link in links" :key="link.id">
+            <li class="nav-item" :class="{ current: localePath($route.path, 'ru').endsWith(link.path) }">
+              <NuxtLink class="nav-link" :to="localePath(link.path)">
                 {{ $t(`page.${link.id}`) }}
               </NuxtLink>
             </li>
@@ -42,6 +41,7 @@ const { mini } = usePath();
             <template v-for="locale in available" :key="locale">
               <li>
                 <NuxtLink class="dropdown-item" :class="{ active: locale == current }" :to="switchLocalePath(locale)">
+                  <!-- Temporary -->
                   {{ $t("language", 1, { locale: locale }) }}
                 </NuxtLink>
               </li>

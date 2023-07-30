@@ -33,7 +33,7 @@
           <!-- <img src="@/assets/icon/yandex-music.svg"> -->
           <IconYM class="fa-2xl fa-fw" />
         </a>
-        <a class="m-2" href="https://www.youtube.com/channel/UCrIlM5foRUY6w5RlGr0ccsw">
+        <a class="m-2" href="https://www.youtube.com/@Virenbar-First">
           <i class="fa-brands fa-youtube fa-2xl fa-fw" />
         </a>
       </p>

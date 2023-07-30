@@ -32,3 +32,17 @@ server:
     - 1 TB WD Black [WD1002FAEX]
   os:
     - Ubuntu 22.04
+
+server_ha:
+  cpu:
+    - Intel Atom x5-Z8350
+  memory:
+    - Unknown DDR3L 4 GB
+  gpu:
+    - Intel HD Graphics 500
+  storage:
+    - 64 GB eMMC Samsung CKTM4R
+  os:
+    - HAOS
+  other:
+    - Sonoff Zigbee USB Dongle Plus (ZBDongle-E)

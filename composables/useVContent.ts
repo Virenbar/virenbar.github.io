@@ -1,5 +1,5 @@
 import { QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
-import { Post, Project } from "~~/types";
+import { Hardware, Post, Project } from "~~/types";
 
 let path: string;
 let locale: string;
@@ -37,10 +37,15 @@ function getPost() {
   return getQuery(path).findOne() as Promise<Post>;
 }
 
+async function getHardware() {
+  return await queryContent("hardware").findOne() as Hardware;
+}
+
 export default function () {
   path = useSwitchLocalePath()("ru");
   locale = useI18n().locale.value;
   return {
+    getHardware,
     getProjects,
     getProject,
     getPostSurround,

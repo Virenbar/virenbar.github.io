@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   css: [
-    "~/assets/css/styles.scss"
+    "@/assets/css/styles.scss"
   ],
   app: {
     head: {
@@ -14,7 +14,8 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content",
     "@nuxtjs/i18n",
-    "@virenbar/nuxt-lanyard"
+    "@virenbar/nuxt-lanyard",
+    "yandex-metrika-module-nuxt3"
   ],
   content: {
     documentDriven: false,
@@ -31,8 +32,10 @@ export default defineNuxtConfig({
       { code: "eo", file: "eo.json" }
     ],
     defaultLocale: "ru",
+    lazy: true, // Inverted in @nuxtjs/i18n beta.13, remove when fixed
     langDir: "locales"
   },
+  yandexMetrika: { id: "87731504" },
   nitro: {
     prerender: {
       routes: ["/sitemap.xml"]
@@ -40,8 +43,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      json: "",
-      storage: ""
+      storage_endpoint: "",
+      storage_json: ""
     }
   }
 });

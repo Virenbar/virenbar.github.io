@@ -1,3 +1,13 @@
+<script setup lang="ts">
+const { getPost, getPostSurround } = useDocument();
+
+const post = await getPost();
+useContentHead(post);
+
+const { prev, next } = await getPostSurround();
+const pathP = prev ? `..${prev._path}` : null;
+const pathN = next ? `..${next._path}` : null;
+</script>
 <template>
   <div v-if="post" class="card">
     <div class="card-header d-flex justify-content-between">
@@ -18,13 +28,3 @@
   </div>
   <ErrorNotFound v-else />
 </template>
-<script setup lang="ts">
-const { getPost, getPostSurround } = useDocument();
-
-const post = await getPost();
-useContentHead(post);
-
-const { prev, next } = await getPostSurround();
-const pathP = prev ? `..${prev._path}` : null;
-const pathN = next ? `..${next._path}` : null;
-</script>
