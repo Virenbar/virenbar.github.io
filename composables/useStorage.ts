@@ -1,7 +1,7 @@
 export default function () {
   const config = useRuntimeConfig().public;
   const path = useState<string>("path", () => "/");
-  const items = useState<StorageItem[]>();
+  const items = useState<StorageItem[]>("items", () => []);
 
   const getPath = () => path.value;
 

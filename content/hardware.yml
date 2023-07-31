@@ -46,3 +46,4 @@ server_ha:
     - HAOS
   other:
     - Sonoff Zigbee USB Dongle Plus (ZBDongle-E)
+    - BroadLink BestCon RM4C mini
