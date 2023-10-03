@@ -18,8 +18,8 @@
   },
   "hardware": {
     "status": "Status",
-    "pc": "My PC",
-    "server": "My Server",
+    "pc": "Primary PC",
+    "server": "Home Server",
     "motherboard": "Motherboard",
     "cpu": "Processor",
     "memory": "Memory",
@@ -27,7 +27,8 @@
     "storage": "Storage",
     "os": "OS",
     "monitor": "Monitor",
-    "other": "Other"
+    "other": "Other",
+    "server_ha": "HA Server"
   },
   "error": {
     "page-not-found": {

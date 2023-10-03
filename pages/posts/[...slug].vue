@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { getPost, getPostSurround } = useDocument();
+const { getPost, getPostSurround } = useVContent();
 
 const post = await getPost();
 useContentHead(post);

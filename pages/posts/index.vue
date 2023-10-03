@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const localePath = useLocalePath();
-const { getPosts } = useDocument();
+const { getPosts } = useVContent();
 const posts = await getPosts();
 </script>
 <template>

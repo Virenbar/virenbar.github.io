@@ -1,5 +1,5 @@
 export default function () {
-  const locales = useNuxtApp().$useLocales();
+  const locales = useNuxtApp().$locales();
 
   return {
     defaults: locales.defaults,

@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import { Nullable, Project } from "~~/types";
+let project: Nullable<Project>;
+
+const { getProject } = useVContent();
+try {
+  project = await getProject();
+  useContentHead(project);
+} catch (error) {
+  console.log(error);
+}
+</script>
 <template>
   <div v-if="project" class="card">
     <div class="card-header d-flex justify-content-between">
@@ -22,15 +34,3 @@
   </div>
   <ErrorNotFound v-else />
 </template>
-<script setup lang="ts">
-import { Nullable, Project } from "~~/types";
-let project: Nullable<Project>;
-
-const { getProject } = useDocument();
-try {
-  project = await getProject();
-  useContentHead(project);
-} catch (error) {
-  console.log(error);
-}
-</script>

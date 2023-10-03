@@ -32,7 +32,6 @@ export default defineNuxtConfig({
       { code: "eo", file: "eo.json" }
     ],
     defaultLocale: "ru",
-    lazy: true, // Inverted in @nuxtjs/i18n beta.13, remove when fixed
     langDir: "locales"
   },
   yandexMetrika: { id: "87731504" },

@@ -34,7 +34,7 @@ export default defineNuxtPlugin(() => {
     return checkLocales();
   }
 
-  function useLocales() {
+  function locales() {
     if (!initialized) { init(); }
     const I18n = useI18n();
     return {
@@ -46,7 +46,7 @@ export default defineNuxtPlugin(() => {
 
   return {
     provide: {
-      useLocales
+      locales
     }
   };
 });

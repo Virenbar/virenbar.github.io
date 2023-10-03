@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const localePath = useLocalePath();
+const { getProjects } = useVContent();
+const projects = await getProjects();
+</script>
 <template>
   <div>
     <Title>{{ $t("page.projects") }}</Title>
@@ -15,8 +20,3 @@
     </ul>
   </div>
 </template>
-<script setup lang="ts">
-const localePath = useLocalePath();
-const { getProjects } = useDocument();
-const projects = await getProjects();
-</script>

@@ -14,8 +14,8 @@ pc:
   os:
     - Windows 10
   monitor:
+    - AOC Gaming 24G2SPU/BK
     - AOC Gaming G2460VQ6
-    - AOC 22B2H 21.5
 
 server:
   motherboard:
@@ -30,6 +30,7 @@ server:
     - 256 GB Samsung 850 EVO MZ-75E250BW
     - 640 GB WD Green [WD6400AACS]
     - 1 TB WD Black [WD1002FAEX]
+    - 1 TB Patriot Memory P210 (P210S1TB25)
   os:
     - Ubuntu 22.04
 

@@ -1,6 +1,6 @@
-# Content v2 Minimal Starter
+# virenbar.ru [![Build artifact][build-src]][build-href] [![Netlify Status][netlify-src]][netlify-href]
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+This repository contains source code for my personal site
 
 ## Setup
 
@@ -12,9 +12,6 @@ yarn install
 
 # npm
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
 ## Development Server
@@ -22,7 +19,7 @@ pnpm install --shamefully-hoist
 Start the development server on <http://localhost:3000>
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ## Production
@@ -30,13 +27,20 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+yarn generate
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+yarn preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+
+<!-- Badges -->
+[build-src]: https://img.shields.io/github/actions/workflow/status/Virenbar/virenbar.github.io/build.yml?label=Build&logo=github
+[build-href]: https://github.com/Virenbar/virenbar.github.io/actions/workflows/build.yml
+
+[netlify-src]: https://api.netlify.com/api/v1/badges/688de4f2-442b-483c-a989-61456bd07808/deploy-status
+[netlify-href]: https://app.netlify.com/sites/virenbar-ru/deploys
