@@ -1,13 +1,13 @@
 export default defineNuxtPlugin(() => {
   let initialized = false;
-  const available = ref([""]);
+  const available = useState("available", () => [""]);
 
   async function init() {
     initialized = true;
 
     const I18n = useI18n();
     const defaults = I18n.localeCodes.value;
-    available.value = defaults;
+    //available.value = defaults;
 
     async function checkLocales() {
       const switchLocalePath = useSwitchLocalePath();

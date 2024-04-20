@@ -5,8 +5,8 @@ github: Virenbar/RadioRecord
 
 An automatically updated list of radio channels of Radio Record
 
-* [List in MarkDown](Stations.md#stations)
-* [Playlists for audio players](playlists)
 * [Site with links to streams](https://virenbar.github.io/RadioRecord/)
+* [Playlists for audio players](https://github.com/Virenbar/RadioRecord/tree/master/playlists/)
+* [List in MarkDown](https://github.com/Virenbar/RadioRecord/blob/master/stations.md#станции)
 
 ![site](/images/radiorecord/site.png){ .img-thumbnail}

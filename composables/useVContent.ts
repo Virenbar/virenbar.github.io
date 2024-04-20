@@ -1,5 +1,5 @@
-import { QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
-import { Hardware, Post, Project } from "~~/types";
+import type { QueryBuilderWhere } from "@nuxt/content/dist/runtime/types";
+import type { Hardware, Post, Project } from "~~/types";
 
 let path: string;
 let locale: string;
@@ -22,6 +22,9 @@ function getProject() {
 }
 
 async function getPostSurround() {
+  const count = await getQuery({ $contains: "posts" }).count();
+  if (count == 1) { return { prev: null, next: null }; }
+
   const surround = await getQuery({ $contains: "posts" }).findSurround(path);
   return {
     prev: <Post | null>surround[0] ?? null,

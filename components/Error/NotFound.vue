@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const props = defineProps<Props>();
+
+interface Props {
+  title?: string,
+  body?: string
+}
+</script>
 <template>
   <div class="text-center">
     <div class="glitch-wrapper">
@@ -9,11 +17,3 @@
     <p>{{ props.body ?? $t("error.page-not-found.body") }}.</p>
   </div>
 </template>
-<script setup lang="ts">
-const props = defineProps<Props>();
-
-interface Props {
-  title?: string,
-  body?: string
-}
-</script>

@@ -11,11 +11,15 @@ export default defineNuxtConfig({
       ]
     }
   },
+  routeRules: {
+    "/storage/**": { ssr: false }
+  },
   modules: [
+    "@nuxt/eslint",
     "@nuxt/content",
     "@nuxtjs/i18n",
-    "@virenbar/nuxt-lanyard",
-    "yandex-metrika-module-nuxt3"
+    "@artmizu/yandex-metrika-nuxt",
+    "@virenbar/nuxt-lanyard"
   ],
   content: {
     documentDriven: false,
@@ -42,6 +46,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      repository: "https://github.com/Virenbar/virenbar.github.io",
+      branch: process.env.HEAD || "master",
+      hash: process.env.COMMIT_REF || "unknown",
+      date: new Date().toISOString(),
       storage_endpoint: "",
       storage_json: ""
     }

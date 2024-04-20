@@ -14,8 +14,7 @@ useSeoMeta({
   ogSiteName: "@Virenbar",
   ogType: "website",
   description: "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg.",
-  ogLocale: locale,
-  ogUrl: computed(() => useRoute().path)
+  ogLocale: locale
 });
 </script>
 <template>

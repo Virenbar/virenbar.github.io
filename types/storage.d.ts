@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 interface StorageJSON {
   name: string
   type: "directory" | "file"

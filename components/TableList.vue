@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const props = defineProps<Props>();
+interface Props {
+  data: Record<string, string[]>
+}
+</script>
 <template>
   <table class="table table-hover border-primary">
     <tbody>
@@ -17,9 +23,3 @@
     </tbody>
   </table>
 </template>
-<script setup lang="ts">
-const props = defineProps<Props>();
-interface Props {
-  data: Record<string, string[]>
-}
-</script>

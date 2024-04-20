@@ -1,9 +1,9 @@
 {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.fixAll.markdownlint": true,
-        "source.organizeImports": true
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.markdownlint": "explicit",
+        "source.organizeImports": "explicit"
     },
     "editor.tabSize": 2,
     "typescript.tsdk": "node_modules/typescript/lib",
@@ -13,9 +13,6 @@
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar",
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "Vue.volar",
-    },
     "[css]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
@@ -23,11 +20,12 @@
         "javascript",
         "typescript"
     ],
+    "eslint.experimental.useFlatConfig": true,
     "i18n-ally.localesPaths": [
         "locales"
     ],
     "i18n-ally.sourceLanguage": "en",
     "i18n-ally.annotations": false,
     "i18n-ally.editor.preferEditor": true,
-    "i18n-ally.keystyle": "nested"
+    "i18n-ally.keystyle": "nested",
 }

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const props = defineProps<Props>();
+const handleError = () => clearError({ redirect: "/" });
+
+interface Props {
+  error: object
+}
+</script>
 <template>
   <h3>Error</h3>
   <div>
@@ -11,11 +19,3 @@
     Clear errors
   </button>
 </template>
-<script setup lang="ts">
-const props = defineProps<Props>();
-const handleError = () => clearError({ redirect: "/" });
-
-interface Props {
-  error: Object
-}
-</script>

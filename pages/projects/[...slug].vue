@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { Nullable, Project } from "~~/types";
-let project: Nullable<Project>;
-
+//import type { Nullable, Project } from "~~/types";
 const { getProject } = useVContent();
+
+const project = await getProject();
+useContentHead(project);
+/*
+let project: Nullable<Project>;
 try {
   project = await getProject();
   useContentHead(project);
 } catch (error) {
   console.log(error);
-}
+}*/
 </script>
 <template>
   <div v-if="project" class="card">
