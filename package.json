@@ -32,6 +32,9 @@
     "typescript": "^5.4.5",
     "webpack": "^5.91.0"
   },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
   "type": "module",
   "private": true
 }
