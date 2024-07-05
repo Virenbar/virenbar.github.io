@@ -36,7 +36,7 @@ Locally preview production build:
 yarn preview
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
 <!-- Badges -->
 [build-src]: https://img.shields.io/github/actions/workflow/status/Virenbar/virenbar.github.io/build.yml?label=Build&logo=github

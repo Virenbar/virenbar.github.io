@@ -1,34 +1,57 @@
 export default function () {
   const config = useRuntimeConfig().public;
-  const path = useState<string>("path", () => "/");
-  const items = useState<StorageItem[]>("items", () => []);
 
-  const getPath = () => path.value;
+  const pending = useState<boolean>("pending", () => true);
+  const storage = useState<StorageState>("storage", () => ({
+    path: "/",
+    breadcrumbs: [],
+    items: [],
+  }));
 
-  const getItems = async (path: string) => {
+  async function getItems(path: string) {
     const url = `${config.storage_json}/${path}`;
     const { data, error } = await useFetch<StorageJSON[]>(url);
-    if (!data.value || error.value) { return []; }
+    if (!data.value || error.value) return [];
 
     return <StorageItem[]>data.value.map(I => ({
       name: I.name,
       type: I.type,
       mtime: new Date(I.mtime),
       size: I.size,
-      url: I.type == "file" ? `${config.storage_endpoint}${path}${I.name}` : `?path=/${I.name}/`
+      url: I.type == "file" ? `${config.storage_endpoint}${path}${I.name}` : `?path=/${I.name}/`,
     }));
-  };
+  }
+
+  function getBreadcrumbs(path: string) {
+    const dirs = path.replace(/\/[^/]*$/, "").split("/");
+    // console.log(dirs);
+    let pp = "";
+    const crumbs: Crumb[] = [];
+    for (let i = 0; i < dirs.length; i++) {
+      pp += dirs[i] + "/";
+      crumbs.push({
+        name: i == 0 ? "root" : decodeURIComponent(dirs[i]),
+        url: `?path=${pp}`,
+        active: i != dirs.length - 1,
+      });
+    }
+    return crumbs;
+  }
 
   watchEffect(async () => {
+    pending.value = true;
     const query = useRoute().query;
-    path.value = typeof query["path"] == "string" ? query["path"] : "/";
-    items.value = await getItems(path.value);
+    const path = typeof query["path"] == "string" ? query["path"] : "/";
+    storage.value = {
+      path,
+      breadcrumbs: getBreadcrumbs(path),
+      items: await getItems(path),
+    };
+    pending.value = false;
   });
 
   return {
-    path,
-    items,
-    getPath,
-    getItems
+    pending,
+    storage,
   };
 }

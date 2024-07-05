@@ -1,19 +1,24 @@
-import type { MarkdownParsedContent, ParsedContent } from "@nuxt/content/dist/runtime/types";
+import type { MarkdownParsedContent, ParsedContent } from "@nuxt/content";
 
-export type Nullable<T> = T | null
+export type Nullable<T> = T | null;
+
+type PostsCollection = `posts_${"en" | "ru" | "eo"}`;
+type ProjectsCollection = `projects_${"en" | "ru"}`;
 
 interface MarkdownPage extends MarkdownParsedContent {
-  _path: string
+  path: string
   title: string
 }
 
 export interface Post extends MarkdownPage {
   date: string
+  description?: string
 }
 
 export interface Project extends MarkdownPage {
   source?: string
   github?: string
+  url?: string
 }
 
 export interface Hardware extends ParsedContent {

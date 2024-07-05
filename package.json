@@ -1,6 +1,6 @@
 {
   "name": "virenbar.github.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "My personal website",
   "author": "Virenbar",
   "license": "MIT",
@@ -13,27 +13,32 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/vue-fontawesome": "^3.1.2",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3",
-    "bootswatch": "^5.3.3"
+    "bootstrap": "^5.3.8",
+    "bootswatch": "^5.3.7",
+    "vue-fontawesome": "^0.0.2"
   },
   "devDependencies": {
-    "@artmizu/yandex-metrika-nuxt": "^1.0.4",
-    "@nuxt/content": "^2.9.0",
-    "@nuxt/eslint": "^0.3.6",
-    "@nuxtjs/i18n": "8.3.0",
+    "@artmizu/yandex-metrika-nuxt": "^1.2.1",
+    "@nuxt/content": "^3.8.0",
+    "@nuxt/eslint": "^1.10.0",
+    "@nuxtjs/i18n": "10.1.2",
     "@types/bootstrap": "^5.2.10",
-    "@virenbar/nuxt-lanyard": "^1.4.0",
-    "eslint": "^9.1.0",
-    "nuxt": "^3.11.2",
-    "sass-loader": "^14.2.1",
-    "sass": "^1.75.0",
-    "sitemap": "^7.1.1",
-    "typescript": "^5.4.5",
-    "webpack": "^5.91.0"
-  },
-  "resolutions": {
-    "jackspeak": "2.1.1"
+    "@virenbar/nuxt-lanyard": "^1.4.1",
+    "better-sqlite3": "^12.4.1",
+    "eslint": "^9.39.0",
+    "nuxt": "^3.17.6",
+    "sass": "^1.93.3",
+    "sass-loader": "^16.0.6",
+    "sitemap": "^8.0.0",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
   },
   "type": "module",
   "private": true

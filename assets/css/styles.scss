@@ -2,8 +2,8 @@
 @import "bootswatch/dist/darkly/variables";
 @import "bootstrap.scss";
 @import "bootswatch/dist/darkly/bootswatch";
-@import "mbr.scss";
-@import "glitch.scss";
+// @import "mbr.scss";
+//@import "glitch.scss";
 @import "gradients.scss";
 
 .wait-for-icons {
@@ -17,11 +17,6 @@
 :root {
     color-scheme: dark;
     font-variant-ligatures: none;
-}
-
-html {
-    //overflow-y: scroll;
-    //scrollbar-gutter: stable;
 }
 
 main {

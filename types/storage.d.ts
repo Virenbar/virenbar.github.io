@@ -8,10 +8,16 @@ interface StorageJSON {
 type StorageItem = Omit<StorageJSON, "mtime"> & {
   mtime: Date
   url: string
-}
+};
 
 interface Crumb {
   name: string
   url: string
   active: boolean
+}
+
+interface StorageState {
+  path: string
+  items: StorageItem[]
+  breadcrumbs: Crumb[]
 }

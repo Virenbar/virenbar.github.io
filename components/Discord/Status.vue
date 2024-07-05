@@ -22,15 +22,15 @@ const colorSize = statusSize * 0.6;
 
 const statusCircle = {
   c: avatarSize - statusSize / 2,
-  r: statusSize / 2
+  r: statusSize / 2,
 };
 const colorRect = {
   wh: colorSize,
-  xy: avatarSize - statusSize * (1 - 0.4 / 2)
+  xy: avatarSize - statusSize * (1 - 0.4 / 2),
 };
 const avatarMask = {
-  c: 1 - (statusSize / 2) / avatarSize, //cx cy
-  r: (statusSize / 2) / avatarSize
+  c: 1 - (statusSize / 2) / avatarSize, // cx cy
+  r: (statusSize / 2) / avatarSize,
 };
 </script>
 <template>

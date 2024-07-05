@@ -1,16 +1,15 @@
 <script setup lang="ts">
-const props = defineProps<Props>();
-const handleError = () => clearError({ redirect: "/" });
-
+defineProps<Props>();
 interface Props {
   error: object
 }
+const handleError = () => clearError({ redirect: "/" });
 </script>
 <template>
   <h3>Error</h3>
   <div>
     <ul>
-      <li v-for="(value, key) in props.error" :key="key">
+      <li v-for="(value, key) in error" :key="key">
         {{ key }}: {{ value }}
       </li>
     </ul>

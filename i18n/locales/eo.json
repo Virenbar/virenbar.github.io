@@ -1,0 +1,28 @@
+{
+  "language": "Esperanto",
+  "blog": {
+    "title": "La lastaj notoj"
+  },
+  "button": {
+    "next": "Sekva",
+    "prev": "Antaŭa"
+  },
+  "description": "La persona retejo de Virenbar, programisto .NET kaj TS vivanta kaj laboranta en Ural, Jekaterinburg",
+  "error": {
+    "page-not-found": {
+      "title": "Paĝo ne trovita",
+      "body": "La petita paĝo ne estis trovita"
+    }
+  },
+  "hardware": {
+    "pc": "Primara komputilo",
+    "server": "Hejma Servilo",
+    "server_ha": "HA Servilo"
+  },
+  "page": {
+    "projects": "Projektoj",
+    "blog": "Blogo",
+    "hardware": "Aparataro",
+    "status": "Statuso"
+  }
+}

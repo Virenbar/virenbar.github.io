@@ -14,16 +14,17 @@ const path = useSwitchLocalePath();
     <div class="col">
       Made with
       <NuxtLink target="_blank" to="https://nuxt.com/">
-        <i class="fa-solid fa-mountain" /> Nuxt
+        <font-awesome-icon icon="fa-solid fa-mountain" /> Nuxt
       </NuxtLink>
       and
       <NuxtLink target="_blank" to="https://pages.github.com/">
-        <i class="fa-brands fa-github" /> GitHub Pages
+        <font-awesome-icon icon="fa-brands fa-github" /> GitHub Pages
       </NuxtLink>
     </div>
 
     <div class="col text-center">
-      <span class="far fa-copyright" title="Copyright" />
+      <font-awesome-icon icon="fa-regular fa-copyright" title="Copyright" />
+      <!-- <font-awesome-icon icon="far fa-copyright" title="Copyright" /> -->
       {{}}
       <span aria-controls="debug" data-bs-target="#debug" data-bs-toggle="offcanvas"> {{ year }} </span>
       Virenbar
@@ -49,13 +50,14 @@ const path = useSwitchLocalePath();
         <ul>
           <li>Locales:</li>
           <ul>
-            <li>Defaults: {{ defaults?.join(", ") }}</li>
-            <li>Available: {{ available?.join(", ") }}</li>
-            <li>Current: {{ current }}</li>
+            <li>Defaults: {{ defaults.join(", ") }}</li>
+            <li>Available: {{available.map(l => l.code).join(", ")}}</li>
+            <li>Current: {{ current?.code }}</li>
           </ul>
-          <li>Language: {{ $t('language') }}({{ current }})</li>
+          <li>Language: {{ current?.name }}({{ current?.code }})</li>
           <li>Path(default):<br> {{ path?.("ru") }}</li>
           <li>Path(locale):<br> {{ $route.path }}</li>
+          <li>Slug: <br> {{ $route.params?.slug }}</li>
           <DiscordTest />
         </ul>
         <NuxtLink to="/storage/">
@@ -65,3 +67,8 @@ const path = useSwitchLocalePath();
     </div>
   </footer>
 </template>
+<style scoped>
+footer {
+  z-index: 1020;
+}
+</style>

@@ -1,8 +1,8 @@
 <script setup>
 useHead({
   bodyAttrs: {
-    class: "end"
-  }
+    class: "end",
+  },
 });
 </script>
 <template>

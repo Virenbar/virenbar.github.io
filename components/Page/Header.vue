@@ -15,7 +15,7 @@ const { mini, header: links } = usePath();
         <Gradient text="@Virenbar" />
       </NuxtLink>
       <button
-        aria-controls="global-navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#global-navbar"
+        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar"
         data-bs-toggle="collapse" type="button">
         <i class="bi bi-three-dots" />
       </button>
@@ -23,8 +23,8 @@ const { mini, header: links } = usePath();
       <div v-if="!mini" id="navbar" class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <template v-for="link in links" :key="link.id">
-            <li class="nav-item" :class="{ current: localePath($route.path, 'ru').endsWith(link.path) }">
-              <NuxtLink class="nav-link" :to="localePath(link.path)">
+            <li class="nav-item">
+              <NuxtLink class="nav-link" :to="localePath(link.path)" active-class="current">
                 {{ $t(`page.${link.id}`) }}
               </NuxtLink>
             </li>
@@ -33,16 +33,17 @@ const { mini, header: links } = usePath();
 
         <div class="dropdown">
           <button aria-expanded="false" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
-            <i class="fa-solid fa-globe" />
-            {{ $t("language") }}
-            {{ }}
+            <font-awesome-icon icon="fa-solid fa-globe" />
+            <!-- {{ $t("language") }} -->
+            {{ current?.name }}
           </button>
           <ul class="dropdown-menu dropdown-menu-dark" style="width:100%; min-width: 100%;">
-            <template v-for="locale in available" :key="locale">
+            <template v-for="locale in available" :key="locale.code">
               <li>
-                <NuxtLink class="dropdown-item" :class="{ active: locale == current }" :to="switchLocalePath(locale)">
-                  <!-- Temporary -->
-                  {{ $t("language", 1, { locale: locale }) }}
+                <NuxtLink class="dropdown-item" active-class="active" :to="switchLocalePath(locale.code)">
+                  {{ locale.name }}
+                  <!-- :class="{ active: locale.code == current.code }" -->
+                  <!-- {{ $t("language", { locale: locale }) }} -->
                 </NuxtLink>
               </li>
             </template>

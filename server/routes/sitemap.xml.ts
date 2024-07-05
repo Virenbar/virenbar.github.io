@@ -1,8 +1,8 @@
-import { serverQueryContent } from "#content/server";
 import fs from "fs";
 import { dirname, resolve } from "path";
-import { SitemapStream, streamToPromise } from "sitemap";
 import { fileURLToPath } from "url";
+import { SitemapStream, streamToPromise } from "sitemap";
+import type { PostsCollection, ProjectsCollection } from "~/types";
 
 const EndPoint = "https://virenbar.ru";
 
@@ -12,18 +12,21 @@ export default defineEventHandler(async (event) => {
   // Static pages
   // https://github.com/benoitdemaegdt/nuxt3-sitemap
   const staticEndpoints = getStaticEndpoints();
-  for (const staticEndpoint of staticEndpoints) {
-    sitemap.write({ url: staticEndpoint, changefreq: "monthly" });
+
+  const locales = ["ru", "en"] as const;
+  for (const locale of locales) {
+    const prefix = locale == "ru" ? "" : `/${locale}`;
+    for (const staticEndpoint of staticEndpoints) {
+      sitemap.write({ url: prefix + staticEndpoint, changefreq: "monthly" });
+    }
+
+    const posts = await queryCollection(event, ("posts_" + locale) as PostsCollection).all();
+    const projects = await queryCollection(event, ("projects_" + locale) as ProjectsCollection).all();
+    for (const page of [...posts, ...projects]) {
+      sitemap.write({ url: prefix + page.path, changefreq: "monthly" });
+    }
   }
 
-  const docs_ru = await serverQueryContent(event, { where: [{ _locale: "ru" }] }).find();
-  const docs_en = await serverQueryContent(event, { where: [{ _locale: "en" }] }).find();
-  const docs_es = await serverQueryContent(event, { where: [{ _locale: "es" }] }).find();
-  const docs = [...docs_ru, ...docs_en, ...docs_es];
-  for (const doc of docs) {
-    const prefix = `${doc._locale}` == "ru" ? "" : `${doc._locale}`;
-    sitemap.write({ url: prefix + doc._path, changefreq: "monthly" });
-  }
   sitemap.end();
   return streamToPromise(sitemap);
 });
@@ -32,11 +35,9 @@ function getStaticEndpoints(): string[] {
   const current = dirname(fileURLToPath(import.meta.url));
   const files = getFiles(`${current}/../../pages`);
   return files
-    .filter((file) => !file.includes("slug")) // exclude dynamic content
-    .map((file) => file.split("pages")[1])
-    .map((file) => {
-      return file.endsWith("index.vue") ? file.split("/index.vue")[0] : file.split(".vue")[0]; // broken on windows
-    });
+    .filter(file => !file.includes("slug")) // exclude dynamic content
+    .map(file => file.split("pages")[1])
+    .map(file => file.replace(/([\\/]index)?(\.vue$)/gm, ""));
 }
 
 /**

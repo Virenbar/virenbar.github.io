@@ -6,7 +6,8 @@ pc:
   memory:
     - Patriot DDR4 32GB (2x16GB) 3200 MHz (PVB432G320C6K)
   gpu:
-    - ASUS Dual GeForce RTX 3060 Ti OC Edition
+    # - ASUS Dual GeForce RTX 3060 Ti OC Edition
+    - ASUS GeForce RTX 4070 SUPER Dual EVO Edition
   storage:
     - 250 GB Samsung 970 EVO Plus MZ-V7S250BW
     - 1 TB SSD WD Blue [WDS100T2B0A]
@@ -16,23 +17,24 @@ pc:
   monitor:
     - AOC Gaming 24G2SPU/BK
     - AOC Gaming G2460VQ6
+  ups:
+    - DEXP MIX 850VA
 
 server:
   motherboard:
-    - ASUS P8Z77-V LE PLUS
+    - AOOSTAR - WTR Pro
   cpu:
-    - Intel Core i5-3570 OEM
+    - AMD Ryzen 7 5825U (Gen3)
   memory:
-    - Corsair DDR3 16GB (4x4GB) 1866MHz (CMZ8GX3M2A1866C9)
-  gpu:
-    - MSI GTX 1060 6GB
+    - Lexar DDR4 32GB (2x16GB) 3200Hz
   storage:
-    - 256 GB Samsung 850 EVO MZ-75E250BW
-    - 640 GB WD Green [WD6400AACS]
-    - 1 TB WD Black [WD1002FAEX]
-    - 1 TB Patriot Memory P210 (P210S1TB25)
+    - 1 TB ASint AS806
+    - 2 TB WD Red Plus [WD20EFPX]
+    - 2 TB WD Red Plus [WD20EFPX]
   os:
-    - Ubuntu 22.04
+    - Ubuntu 24.04
+  ups:
+    - Ippon Back Basic 1050
 
 server_ha:
   cpu:
@@ -48,3 +50,5 @@ server_ha:
   other:
     - Sonoff Zigbee USB Dongle Plus (ZBDongle-E)
     - BroadLink BestCon RM4C mini
+  ups:
+    - CyberPower UT650EG

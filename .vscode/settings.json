@@ -3,7 +3,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit",
         "source.fixAll.markdownlint": "explicit",
-        "source.organizeImports": "explicit"
+        //"source.organizeImports": "explicit"
     },
     "editor.tabSize": 2,
     "typescript.tsdk": "node_modules/typescript/lib",
@@ -20,12 +20,12 @@
         "javascript",
         "typescript"
     ],
-    "eslint.experimental.useFlatConfig": true,
+    "eslint.useFlatConfig": true,
     "i18n-ally.localesPaths": [
-        "locales"
+        "i18n/locales"
     ],
-    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.sourceLanguage": "ru",
     "i18n-ally.annotations": false,
     "i18n-ally.editor.preferEditor": true,
-    "i18n-ally.keystyle": "nested",
+    "i18n-ally.keystyle": "nested"
 }

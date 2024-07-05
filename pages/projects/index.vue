@@ -11,8 +11,8 @@ const projects = await getProjects();
       <template v-for="project in projects" :key="project.id">
         <li>
           <h4>
-            <NuxtLink :to="localePath(project._path!)">
-              {{ project.title }}
+            <NuxtLink :to="localePath(project.path)">
+              {{ project?.title }}
             </NuxtLink>
           </h4>
         </li>

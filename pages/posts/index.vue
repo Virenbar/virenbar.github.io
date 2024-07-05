@@ -10,12 +10,15 @@ const posts = await getPosts();
     <ul>
       <template v-for="post in posts" :key="post.id">
         <li>
-          <h4>
-            <NuxtLink :to="localePath(post._path!)">
-              {{ post.title }}
+          <h5>
+            <NuxtLink :to="localePath(post.path)">
+              {{ formatDate(new Date(post.date)) }} - {{ post.title }}
             </NuxtLink>
-          </h4>
-          <ContentRenderer :value="post" :excerpt="true" />
+          </h5>
+          <p v-if="post.description">
+            {{ post.description }}
+          </p>
+          <!-- <ContentRenderer v-if="post.excerpt?.children.length" :value="post" :excerpt="true" /> -->
         </li>
       </template>
     </ul>

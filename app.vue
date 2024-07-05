@@ -1,29 +1,36 @@
 <script setup lang="ts">
-useFocusReset();
-const { current } = useLocales();
-const locale = computed(() => ({
-  ru: "ru_RU",
-  en: "en_US",
-  eo: "eo"
-})[current.value] || current.value);
+const { t } = useI18n();
+const title = "@Virenbar";
+const description = t("description");
+const logo = "/favicon/android-chrome-192x192.png";
+const { current_code } = useLocales();
 
 useHead({
-  titleTemplate: (titleChunk: unknown) => { return titleChunk ? `${titleChunk} - @Virenbar` : "@Virenbar"; }
+  titleTemplate: chunk => (chunk ? `${chunk} - ` : "") + title,
+  meta: [{ name: "description", content: description }],
+  htmlAttrs: { lang: current_code },
 });
 useSeoMeta({
-  ogSiteName: "@Virenbar",
+  ogDescription: description,
+  ogImage: logo,
+  ogImageSecureUrl: logo,
+  ogLocale: current_code,
+  ogSiteName: title,
+  ogTitle: title,
   ogType: "website",
-  description: "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg.",
-  ogLocale: locale
+  twitterCard: "summary",
+  twitterDescription: description,
+  twitterImage: logo,
+  twitterTitle: title,
 });
+useFocusReset();
 </script>
 <template>
   <PageFavicon />
+  <PageCRT />
   <div class="min-vh-100 d-flex flex-column">
     <PageHeader />
     <main id="main" class="flex-grow-1 flex-shrink-0">
-      <div class="scanlines" />
-      <div class="scanline" />
       <div class="container p-3">
         <NuxtPage />
       </div>
@@ -31,3 +38,6 @@ useSeoMeta({
     <PageFooter />
   </div>
 </template>
+<style lang="scss">
+@use "~/assets/css/styles.scss";
+</style>

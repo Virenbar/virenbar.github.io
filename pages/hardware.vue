@@ -6,13 +6,13 @@ const hardware = await useVContent().getHardware();
 const pc: Record<string, string[]> = {};
 const server: Record<string, string[]> = {};
 const server_ha: Record<string, string[]> = {};
-for (const key in hardware.pc) {
+for (const key in hardware?.pc) {
   pc[t("hardware." + key)] = hardware.pc[key];
 }
-for (const key in hardware.server) {
+for (const key in hardware?.server) {
   server[t("hardware." + key)] = hardware.server[key];
 }
-for (const key in hardware.server_ha) {
+for (const key in hardware?.server_ha) {
   server_ha[t("hardware." + key)] = hardware.server_ha[key];
 }
 </script>

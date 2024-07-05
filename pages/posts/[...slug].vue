@@ -1,18 +1,22 @@
 <script setup lang="ts">
-const { getPost, getPostSurround } = useVContent();
+const { getPost } = useVContent();
+const { post, prev, next } = await getPost()
+const route = useRoute()
+console.log(route.params.slug)
 
-const post = await getPost();
-useContentHead(post);
+useSeoMeta({
+  title: post?.title,
+  description: post?.description
+})
 
-const { prev, next } = await getPostSurround();
-const pathP = prev ? `..${prev._path}` : null;
-const pathN = next ? `..${next._path}` : null;
+const pathP = prev ? `..${prev.path}` : null;
+const pathN = next ? `..${next.path}` : null;
 </script>
 <template>
   <div v-if="post" class="card">
-    <div class="card-header d-flex justify-content-between">
+    <div class="card-header d-flex justify-content-between align-items-center">
       <h4>{{ post.title }}</h4>
-      <span class="text-muted">{{ formatISODate(post.date) }}</span>
+      <span class="text-body-secondary">{{ formatISODate(post.date) }}</span>
     </div>
     <div class="card-body">
       <ContentRenderer :value="post" />

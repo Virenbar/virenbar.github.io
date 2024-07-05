@@ -1,15 +1,15 @@
-<template>
-  <NuxtLink v-if="props.url" class="btn btn-primary" :to="props.url">
-    {{ props.title }}
-  </NuxtLink>
-  <NuxtLink v-else aria-disabled="true" class="btn btn-primary disabled" tabindex="-1">
-    {{ props.title }}
-  </NuxtLink>
-</template>
 <script setup lang="ts">
-const props = defineProps<Props>();
+defineProps<Props>();
 interface Props {
   title: string
   url?: string | null
 }
 </script>
+<template>
+  <NuxtLink v-if="url" class="btn btn-primary" :to="url">
+    {{ title }}
+  </NuxtLink>
+  <NuxtLink v-else aria-disabled="true" class="btn btn-primary disabled" tabindex="-1">
+    {{ title }}
+  </NuxtLink>
+</template>

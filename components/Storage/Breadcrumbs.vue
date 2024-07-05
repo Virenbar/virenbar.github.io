@@ -12,7 +12,7 @@ const breadcrumbs = computed(() => {
     crumbs.push({
       name: i == 0 ? "root" : decodeURIComponent(dirs[i]),
       url: path,
-      active: i != dirs.length - 1
+      active: i != dirs.length - 1,
     });
   }
   return crumbs;

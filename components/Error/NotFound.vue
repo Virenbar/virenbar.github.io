@@ -1,8 +1,7 @@
 <script setup lang="ts">
-const props = defineProps<Props>();
-
+defineProps<Props>();
 interface Props {
-  title?: string,
+  title?: string
   body?: string
 }
 </script>
@@ -13,7 +12,10 @@ interface Props {
         404
       </h1>
     </div>
-    <p><strong>{{ props.title ?? $t("error.page-not-found.title") }} :(</strong></p>
-    <p>{{ props.body ?? $t("error.page-not-found.body") }}.</p>
+    <p><strong>{{ title ?? $t("error.page-not-found.title") }} :(</strong></p>
+    <p>{{ body ?? $t("error.page-not-found.body") }}.</p>
   </div>
 </template>
+<style>
+@import url("~/assets/css/glitch.scss");
+</style>

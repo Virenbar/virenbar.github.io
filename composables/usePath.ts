@@ -1,5 +1,5 @@
 const MiniPaths = [
-  "/storage/"
+  "/storage/",
 ];
 
 const Header = [
@@ -9,19 +9,20 @@ const Header = [
   { id: "blog", path: "/posts" },
   { id: "hardware", path: "/hardware" },
   { id: "status", path: "/status" },
-  //{ id: "status", path: "https://stats.uptimerobot.com/X0WxrI4WxW" }
+  // { id: "status", path: "https://stats.uptimerobot.com/X0WxrI4WxW" }
 ];
 
 export default function () {
-  const mini = useState<boolean>("/");
-
+  const mini = useState<boolean>("mini");
+  // mini.value = !!useError();
   watchEffect(async () => {
-    mini.value = MiniPaths.some(P => useRoute().path.match(P));
-    //console.log(mini.value);
+    mini.value = MiniPaths.some(P => useRoute().path.match(P)) || !!useError().value;
+    // console.log(mini.value);
+    // console.log(useError().value);
   });
 
   return {
     mini,
-    header: Header
+    header: Header,
   };
 }

@@ -1,0 +1,44 @@
+{
+  "language": "English",
+  "description": "The personal website of Virenbar, a .NET and TS developer living and working in Ural, Yekaterinburg",
+  "page": {
+    "home": "Home",
+    "projects": "Projects",
+    "hardware": "Hardware",
+    "blog": "Blog",
+    "status": "Status"
+  },
+  "home": {
+    "P1": "Hi, i'm Virenbar and this is my personal site.",
+    "P2": "I'm a .NET(C#,VB) and TypeScript developer.",
+    "discord": "virenbar on"
+  },
+  "blog": {
+    "title": "Latest Posts"
+  },
+  "hardware": {
+    "status": "Status",
+    "pc": "Primary PC",
+    "server": "Home Server",
+    "motherboard": "Motherboard",
+    "cpu": "Processor",
+    "memory": "Memory",
+    "gpu": "Graphics card",
+    "storage": "Storage",
+    "os": "OS",
+    "monitor": "Monitor",
+    "other": "Other",
+    "server_ha": "HA Server",
+    "ups": "UPS"
+  },
+  "error": {
+    "page-not-found": {
+      "title": "Page not found",
+      "body": "The requested page could not be found"
+    }
+  },
+  "button": {
+    "prev": "Previous",
+    "next": "Next"
+  }
+}

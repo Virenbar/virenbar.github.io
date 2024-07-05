@@ -2,10 +2,8 @@
 const props = defineProps<Props>();
 interface Props { items: StorageItem[] }
 
-const dirCount = props.items.filter(I => I.type == "directory").length;
-const fileCount = props.items.filter(I => I.type == "file").length;
-const dirStats = `${dirCount} director${dirCount == 1 ? "y" : "ies"}`;
-const fileStats = `${fileCount} file${fileCount == 1 ? "" : "s"}`;
+const dirCount = computed(() => props.items.filter(I => I.type == "directory").length);
+const fileCount = computed(() => props.items.filter(I => I.type == "file").length);
 </script>
 <template>
   <Link
@@ -14,8 +12,8 @@ const fileStats = `${fileCount} file${fileCount == 1 ? "" : "s"}`;
     referrerpolicy="no-referrer" />
   <div>
     <span>Directory Listing</span>
-    <span class="float-end mx-1">{{ fileStats }}</span>
-    <span class="float-end mx-1">{{ dirStats }}</span>
+    <span class="float-end mx-1">{{ dirCount }} director{{ dirCount == 1 ? "y" : "ies" }}</span>
+    <span class="float-end mx-1">{{ fileCount }} file{{ fileCount == 1 ? "" : "s" }}</span>
   </div>
   <div class="table-responsive">
     <table class="table table-sm table-borderless table-hover">
