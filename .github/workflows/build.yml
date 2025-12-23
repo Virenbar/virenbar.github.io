@@ -5,6 +5,9 @@ on:
   pull_request:
     branches: [master]
   workflow_call:
+env:
+  NUXT_PUBLIC_STORAGE_ENDPOINT: ${{ vars.STORAGE_ENDPOINT }}
+  NUXT_PUBLIC_STORAGE_JSON: ${{ vars.STORAGE_JSON }}
 jobs:
   build:
     name: Build
