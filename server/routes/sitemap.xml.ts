@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
   // Static pages
   // https://github.com/benoitdemaegdt/nuxt3-sitemap
-  const staticEndpoints = getStaticEndpoints();
+  const staticEndpoints = await getStaticEndpoints();
 
   const locales = ["ru", "en"] as const;
   for (const locale of locales) {
@@ -31,9 +31,11 @@ export default defineEventHandler(async (event) => {
   return streamToPromise(sitemap);
 });
 
-function getStaticEndpoints(): string[] {
+async function getStaticEndpoints(): Promise<string[]> {
   const current = dirname(fileURLToPath(import.meta.url));
-  const files = getFiles(`${current}/../../pages`);
+  // console.log(current);
+  // You're ugly
+  const files = getFiles(`${current}/../../../../../app/pages`);
   return files
     .filter(file => !file.includes("slug")) // exclude dynamic content
     .map(file => file.split("pages")[1])
