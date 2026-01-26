@@ -38,7 +38,7 @@ async function getStaticEndpoints(): Promise<string[]> {
   const files = getFiles(`${current}/../../../../../app/pages`);
   return files
     .filter(file => !file.includes("slug")) // exclude dynamic content
-    .map(file => file.split("pages")[1])
+    .map(file => file.split("pages")[1]!)
     .map(file => file.replace(/([\\/]index)?(\.vue$)/gm, ""));
 }
 
