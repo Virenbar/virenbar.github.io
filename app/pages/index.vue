@@ -27,13 +27,12 @@
           <a class="m-2" href="https://vk.com/virenbar" target="_blank">
             <font-awesome-icon icon="fa-brands fa-vk" size="2xl" />
           </a>
-          <a class="m-2" href="https://open.spotify.com/user/virenbar" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-spotify" size="2xl" />
-          </a>
-          <a class="m-2" href="https://music.yandex.ru/users/AD-42/playlists" target="_blank">
-            <!-- <img src="@/assets/icon/yandex-music.svg"> -->
-            <IconYM class="fa-2xl" />
-          </a>
+          <!-- <a class="m-2" href="https://open.spotify.com/user/virenbar" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-spotify" size="2xl" /> Spotify идёт нахуй
+          </a> -->
+          <!-- <a class="m-2" href="https://music.yandex.ru/users/AD-42/playlists" target="_blank">
+            <IconYM class="fa-2xl" /> Сломано яндексом
+          </a> -->
           <a class="m-2" href="https://www.youtube.com/@VirenbarVideos" target="_blank">
             <font-awesome-icon icon="fa-brands fa-youtube" size="2xl" />
           </a>

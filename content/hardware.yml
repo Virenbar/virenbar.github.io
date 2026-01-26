@@ -1,19 +1,19 @@
 pc:
   motherboard:
-    - MSI B450-A PRO MAX
+    - MSI PRO B650-A WIFI
   cpu:
-    - AMD Ryzen 5 3600 AM4 OEM
+    - AMD Ryzen 5 7500F OEM
   memory:
-    - Patriot DDR4 32GB (2x16GB) 3200 MHz (PVB432G320C6K)
+    - ADATA XPG Lancer Blade DDR5 2x16GB 6000 MHz [AX5U6000C3016G-DTLABBK]
   gpu:
-    # - ASUS Dual GeForce RTX 3060 Ti OC Edition
     - ASUS GeForce RTX 4070 SUPER Dual EVO Edition
   storage:
-    - 250 GB Samsung 970 EVO Plus MZ-V7S250BW
+    - 1 TB M.2 NVMe Samsung 990 PRO [MZ-V9P1T0BW]
+    - 1 TB M.2 NVMe ADATA LEGEND 900 [SLEG-900-1TCS]
     - 1 TB SSD WD Blue [WDS100T2B0A]
     - 2 TB Seagate BarraCuda [ST2000DM008]
   os:
-    - Windows 10
+    - Windows 11
   monitor:
     - AOC Gaming 24G2SPU/BK
     - AOC Gaming G2460VQ6
