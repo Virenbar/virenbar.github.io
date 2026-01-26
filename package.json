@@ -29,7 +29,7 @@
     "@nuxt/eslint": "^1.13.0",
     "@nuxtjs/i18n": "10.2.1",
     "@types/bootstrap": "^5.2.10",
-    "@virenbar/nuxt-lanyard": "^1.5.0",
+    "@virenbar/nuxt-lanyard": "^1.5.1",
     "better-sqlite3": "^12.5.0",
     "eslint": "^9.39.2",
     "nuxt": "^4.3.0",

@@ -1246,7 +1246,7 @@
     pathe "^2.0.3"
     unimport "^5.6.0"
 
-"@nuxt/kit@4.3.0", "@nuxt/kit@^4.0.3", "@nuxt/kit@^4.1.2", "@nuxt/kit@^4.2.0", "@nuxt/kit@^4.2.1", "@nuxt/kit@^4.2.2", "@nuxt/kit@^4.3.0":
+"@nuxt/kit@4.3.0", "@nuxt/kit@^4.0.3", "@nuxt/kit@^4.1.2", "@nuxt/kit@^4.2.1", "@nuxt/kit@^4.2.2", "@nuxt/kit@^4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-4.3.0.tgz#2ea76259a2ba5b27d6ae6998202957123616665e"
   integrity sha512-cD/0UU9RQmlnTbmyJTDyzN8f6CzpziDLv3tFQCnwl0Aoxt3KmFu4k/XA4Sogxqj7jJ/3cdX1kL+Lnsh34sxcQQ==
@@ -2734,12 +2734,12 @@
     picomatch "^4.0.2"
     resolve-from "^5.0.0"
 
-"@virenbar/nuxt-lanyard@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@virenbar/nuxt-lanyard/-/nuxt-lanyard-1.5.0.tgz#7501ccb9c5a88cfe14bfbdcae564a2fe4221c399"
-  integrity sha512-9wG84kQtlPOz2ybKOE9tDK97Icwmqa4zOzyrnO0PGNxvY3iLz/vaTgzJA/DIx+15KTHjhg8/YEvM78exKjoozg==
+"@virenbar/nuxt-lanyard@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@virenbar/nuxt-lanyard/-/nuxt-lanyard-1.5.1.tgz#1e93c5bfe1b63ccc559d2b885bdef788d4a58a21"
+  integrity sha512-diJcuGdQGwHrDPGw0qiIlpOxEMRL6CtleXtbIW5Lb2Mqvv/sqJkLx6CUbnX/qAIVg+v8rBkOuvFD5p0b+1pxfg==
   dependencies:
-    "@nuxt/kit" "^4.2.0"
+    "@nuxt/kit" "^4.3.0"
     defu "^6.1.4"
 
 "@vitejs/plugin-vue-jsx@^5.1.3":
