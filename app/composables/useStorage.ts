@@ -10,10 +10,11 @@ export default function () {
 
   async function getItems(path: string) {
     const url = `${config.storage_json}/${path}`;
-    const { data, error } = await useFetch<StorageJSON[]>(url);
-    if (!data.value || error.value) return [];
+    const data = await $fetch<StorageJSON[]>(url);
+    // const { data, error } = await useFetch<StorageJSON[]>(url);
+    // if (!data.value || error.value) return [];
 
-    return <StorageItem[]>data.value.map(I => ({
+    return <StorageItem[]>data.map(I => ({
       name: I.name,
       type: I.type,
       mtime: new Date(I.mtime),
@@ -25,33 +26,48 @@ export default function () {
   function getBreadcrumbs(path: string) {
     const dirs = path.replace(/\/[^/]*$/, "").split("/");
     // console.log(dirs);
-    let pp = "";
+    let url = "";
     const crumbs: Crumb[] = [];
     for (let i = 0; i < dirs.length; i++) {
-      pp += dirs[i] + "/";
+      const dir = dirs[i];
+      if (dir == undefined) continue;
+      url += `${dir}/`;
       crumbs.push({
-        name: i == 0 ? "root" : decodeURIComponent(dirs[i]),
-        url: `?path=${pp}`,
+        name: i == 0 ? "root" : decodeURIComponent(dir),
+        url: `?path=${url}`,
         active: i != dirs.length - 1,
       });
     }
     return crumbs;
   }
 
-  watchEffect(async () => {
+  async function update(path: string) {
     pending.value = true;
-    const query = useRoute().query;
-    const path = typeof query["path"] == "string" ? query["path"] : "/";
     storage.value = {
       path,
       breadcrumbs: getBreadcrumbs(path),
       items: await getItems(path),
     };
     pending.value = false;
-  });
+  }
+
+  // if (import.meta.client) {
+  //   watchEffect(async () => {
+  //     pending.value = true;
+  //     const query = useRoute().query;
+  //     const path = typeof query["path"] == "string" ? query["path"] : "/";
+  //     storage.value = {
+  //       path,
+  //       breadcrumbs: getBreadcrumbs(path),
+  //       items: await getItems(path),
+  //     };
+  //     pending.value = false;
+  //   });
+  // }
 
   return {
     pending,
     storage,
+    update,
   };
 }

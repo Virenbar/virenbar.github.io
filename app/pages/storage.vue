@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const { pending, storage } = useStorage();
+const { pending, storage, update } = useStorage();
+onMounted(() => {
+  watchEffect(async () => {
+    const query = useRoute().query;
+    const path = typeof query["path"] == "string" ? query["path"] : "/";
+    await update(path);
+  })
+})
 </script>
 <template>
   <div>

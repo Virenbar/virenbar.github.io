@@ -38,8 +38,6 @@ export default defineNuxtConfig({
       storage_endpoint: "",
       storage_json: "",
     },
-  }, routeRules: {
-    "/storage/**": { ssr: false },
   },
   compatibilityDate: "2024-07-04",
   nitro: {
