@@ -29,6 +29,7 @@ server:
     - Lexar DDR4 32GB (2x16GB) 3200Hz
   storage:
     - 1 TB ASint AS806
+    - 1 TB Patriot P210 [P210S1TB25]
     - 2 TB WD Red Plus [WD20EFPX]
     - 2 TB WD Red Plus [WD20EFPX]
   os:

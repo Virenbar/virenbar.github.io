@@ -7,13 +7,13 @@ const pc: Record<string, string[]> = {};
 const server: Record<string, string[]> = {};
 const server_ha: Record<string, string[]> = {};
 for (const key in hardware?.pc) {
-  pc[t("hardware." + key)] = hardware.pc[key];
+  pc[t("hardware." + key)] = hardware.pc[key]!;
 }
 for (const key in hardware?.server) {
-  server[t("hardware." + key)] = hardware.server[key];
+  server[t("hardware." + key)] = hardware.server[key]!;
 }
 for (const key in hardware?.server_ha) {
-  server_ha[t("hardware." + key)] = hardware.server_ha[key];
+  server_ha[t("hardware." + key)] = hardware.server_ha[key]!;
 }
 </script>
 <template>

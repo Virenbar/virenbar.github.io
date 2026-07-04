@@ -23,3 +23,8 @@ interface Props {
     </tbody>
   </table>
 </template>
+<style>
+th {
+  width: 20%;
+}
+</style>
