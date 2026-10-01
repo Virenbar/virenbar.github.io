@@ -30,7 +30,7 @@
     "@nuxtjs/i18n": "10.4.0",
     "@types/bootstrap": "^5.2.11",
     "@virenbar/nuxt-lanyard": "^1.5.1",
-    "better-sqlite3": "^12.11.1",
+    "better-sqlite3": "^13.0.3",
     "eslint": "^10.6.0",
     "nuxt": "^4.5.2",
     "sass": "^1.101.0",
