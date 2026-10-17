@@ -1,8 +1,8 @@
 export default function () {
   const { defaults, available, locale } = useNuxtApp().$locales();
+  const I18n = useI18n();
 
   const current = computed(() => {
-    const I18n = useI18n();
     return I18n.locales.value.find(l => l.code == I18n.locale.value);
   });
 
