@@ -11,3 +11,5 @@ url: https://virenbar.ru/tix-clock-web/
 ::
 
 [Страница с часами](https://virenbar.ru/tix-clock-web/)
+
+Версия для [Wallpaper Engine](https://steamcommunity.com/sharedfiles/filedetails/?id=3586279452)
