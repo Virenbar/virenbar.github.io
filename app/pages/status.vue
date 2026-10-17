@@ -2,7 +2,7 @@
 const { t } = useI18n();
 const title = t("page.status");
 useHead({
-  script: [{ src: "https://stttc.b-cdn.net/iframeResizer/iframeResizer.min.js", type: "text/javascript" }],
+  script: [{ src: "https://static.hetrix.io/iframeResizer/iframeResizer.min.js", type: "text/javascript" }],
 });
 useSeoMeta({
   title: title,
